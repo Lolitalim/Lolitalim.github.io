@@ -91,9 +91,3 @@ hr {
   /* Avoid pushing up the copy buttons. */
   margin: 0;
 }
-
-@media print {
-  .no-print {
-    display: none !important;
-  }
-}
