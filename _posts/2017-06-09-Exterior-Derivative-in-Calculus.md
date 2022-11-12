@@ -1,6 +1,7 @@
-﻿注释：
+﻿Remarks:
 
-转载请注明出处<http://www.cnblogs.com/HuisClos/articles/6966036.html> 
+I wrote this paragraph in my sophomore year on another blog platform.
+<http://www.cnblogs.com/HuisClos/articles/6966036.html> 
 
 -----
 
