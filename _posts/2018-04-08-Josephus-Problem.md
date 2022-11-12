@@ -1,124 +1,160 @@
-<p>&nbsp;</p>
-<p>n people (numbered 1 to n) around a circle,eliminate every second remaining person until only one survives.</p>
-<p>The problem &mdash; given the number of people, starting point, direction, and number to be skipped &mdash; is to choose the position in the initial circle to avoid execution.</p>
-<p><strong>Solution:</strong></p>
-<p>In the following,&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;denotes the number of people in the initial circle, and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />&nbsp;denotes the count for each step, that is,&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21363ebd7038c93aae93127e7d910fc1b2e2c745" alt="k-1" />&nbsp;people are skipped and the&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />-th is executed. </span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">The people in the circle are numbered from&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92d98b82a3778f043108d4e20960a9193df57cbf" alt="1" />&nbsp;to&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />.</span></span></span></span></span></span></span></span></span></span></span></span></p>
-<h3><span id="k.3D2"><span id="k=2" class="mw-headline">k=2<span class="mw-editsection"><span class="mw-editsection-bracket"><span class="mw-editsection-bracket"><br /></span></span></span></span></span></h3>
-<p>We explicitly solve the problem when every second person will be killed, i.e.&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0bd301789e1f25a3da4be297ff637754ebee5f5d" alt="k=2" />. (For the more general case&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/954372c73b10ed948c8ed9e269aaa91a751461a3" alt="k\neq 2" />, we outline a solution below.) We express the solution recursively.</span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> Let&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;denote the position of the survivor when there are initially&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;people (and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0bd301789e1f25a3da4be297ff637754ebee5f5d" alt="k=2" />). </span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">The first time around the circle, all of the even-numbered people die.</span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> The second time around the circle, the new 2nd person dies, then the new 4th person, etc.;</span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> it's as though there were no first time around the circle.</span></span></span></span></span></span></span></span></span></span></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>If the initial number of people was even, then the person in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87f9e315fd7e2ba406057a97300593c4802b53e4" alt="x" />&nbsp;during the second time around the circle was originally in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/75fc96485e02202cc2de34a26fe67d497bc51326" alt="2x-1" />&nbsp;(for every choice of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87f9e315fd7e2ba406057a97300593c4802b53e4" alt="x" />). </span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Let&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/609cba968b5f800b42926aa24dc3e7230e64fd22" alt="n=2j" />. The person at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92b7258a4eb6e431a851bf33bd3b8afd07094a8f" alt="f(j)" />&nbsp;who will now survive was originally in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4b738504e6ba81a1f58af006ccbd5a423403c987" alt="2f(j)-1" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">This gives us the recurrence</span></span></span></span></span></span></span></span></span></span></span></span><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8beba84c2681cd7b102ec47a37bd7fda3c53e2a8" alt="f(2j)=2f(j)-1\;." /></p>
-<p>&nbsp;</p>
-<p>If the initial number of people was odd, then we think of person 1 as dying at the end of the first time around the circle. </p>
-<p>Again, during the second time around the circle, the new 2nd person dies, then the new 4th person, etc. In this case, the person in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87f9e315fd7e2ba406057a97300593c4802b53e4" alt="x" />&nbsp;was originally in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ec86c7ed988e98a84b2b33e07f0737a421bfba07" alt="2x+1" />. </span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">This gives us the recurrence</span></span></span></span><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c5fd4b4dadeaee48b56cf03c9d84df8e71592bd9" alt="f(2j+1)=2f(j)+1\;." /></p>
-<p>When we tabulate the values of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;we see a pattern:</span></span></span></span></p>
-<table>
-<tbody>
-<tr>
-<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" /></span></span></td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-<td>11</td>
-<td>12</td>
-<td>13</td>
-<td>14</td>
-<td>15</td>
-<td>16</td>
 
-</tr>
-<tr>
-<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" /></span></span></td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
-<td>1</td>
-<td>3</td>
-<td>5</td>
-<td>7</td>
-<td>1</td>
-<td>3</td>
-<td>5</td>
-<td>7</td>
-<td>9</td>
-<td>11</td>
-<td>13</td>
-<td>15</td>
-<td>1</td>
+---
+layout: post
+title: "[Recurrent Problems]Josephus Problem"
+date: 2018-04-08
+tags: Algorithms
+---
 
-</tr>
 
-</tbody>
+Remarks:
 
-</table>
-<p>This suggests that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;is an increasing odd sequence that restarts with&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b18729f39cdba4b90c6c24c34cf558e826d0d1f6" alt="f(n)=1" />&nbsp;whenever the index&nbsp;<em>n</em>&nbsp;is a power of 2. </span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Therefore, if we choose&nbsp;<em>m</em>&nbsp;and&nbsp;<em>l</em>&nbsp;so that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b65df22179bdf0e35598d93bd6703a32c03100d8" alt="n=2^{m}+l" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5189a60581e81a21347624a6b5ab932a9e59e4c" alt="0\leq l&lt;2^{m}" />, then&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/42b018500733a6766ccf20d3ed652ae6336b73e1" alt="f(n)=2\cdot l+1" />. </span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">It is clear that values in the table satisfy this equation. Or we can think that after&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/829091f745070b9eb97a80244129025440a1cfac" alt="l" />&nbsp;people are dead there are only&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/667d0154f26e56e3f7979803f08afac16b4dcb16" alt="2^{m}" />&nbsp;people and we go to the&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ad6cc29a87d7b25ec1f294612477d5a38f59c09a" alt="2l+1" />th person. </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">He must be the survivor. So&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd6d4a1f2b5a1513ce9ab10163bf23fc51d948ce" alt="f(n)=2l+1" />. Below, we give a proof by induction.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><strong>Theorem:</strong>&nbsp;If&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b65df22179bdf0e35598d93bd6703a32c03100d8" alt="n=2^{m}+l" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5189a60581e81a21347624a6b5ab932a9e59e4c" alt="0\leq l&lt;2^{m}" />, then&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd6d4a1f2b5a1513ce9ab10163bf23fc51d948ce" alt="f(n)=2l+1" />.</span></span></span></span></span></span></p>
-<p><strong>Proof:</strong>&nbsp;We use&nbsp;strong induction&nbsp;on&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />. </span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The base case&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d9ec7e1edc2e6d98f5aec2a39ae5f1c99d1e1425" alt="n=1" />&nbsp;is true. </span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We consider separately the cases when&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is even and when&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is odd.</span></span></span></span></span></span></span></span></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is even, then choose&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/29b25eeca673386d676f79dce674fe93040693eb" alt="l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/31aafa60e48d39ccce922404c0b80340b2cc777a" alt="m_{1}" />&nbsp;such that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2fd6343010fb386af17a62856fd112676a3f7aa1" alt="n/2=2^{{m_{1}}}+l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cae73db595a655f9cc9f0b5b9652efff28a5d116" alt="0\leq l_{1}&lt;2^{{m_{1}}}" />.</span></span></span></span></span></span></span></span></span></span><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Note that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/069aa97d0fcecc250f0ac344c3ffc01c9c4d7054" alt="l_{1}=l/2" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We have&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6639ae83b9b9f50201326c0ff41ee1ef340325e5" alt="f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1" />, where the second equality follows from the induction hypothesis.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is odd, then choose&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/29b25eeca673386d676f79dce674fe93040693eb" alt="l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/31aafa60e48d39ccce922404c0b80340b2cc777a" alt="m_{1}" />&nbsp;such that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8ba574aedbde4c8bec87cce8a667eeedb84f7c58" alt="(n-1)/2=2^{{m_{1}}}+l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cae73db595a655f9cc9f0b5b9652efff28a5d116" alt="0\leq l_{1}&lt;2^{{m_{1}}}" />. Note that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b3f92739fc3811f2524009abb54af4a1b4a1ee1f" alt="l_{1}=(l-1)/2" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We have&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/405c97bca01969df4cefd7d3e926921433723f59" alt="f(n)=2f((n-1)/2)+1=2((2l_{1})+1)+1=2l+1" />, where the second equality follows from the induction hypothesis.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This completes the proof.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We can solve for&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/829091f745070b9eb97a80244129025440a1cfac" alt="l" />&nbsp;to get an explicit expression for&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />:</span></span></span></span></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fd4a1f796181ff160f2a353cb6d4aaa3edaa767f" alt="f(n)=2(n-2^{{\lfloor \log _{2}(n)\rfloor }})+1" /></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The most elegant form of the answer involves the binary representation of size&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />:&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;can be obtained by a one-bit left cyclic shift of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;itself.</span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If we represent&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;in binary as&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a2f9a95ba4886d271a1f6399488c2c0ff5dc24c6" alt="n=1b_{1}b_{2}b_{3}\dots b_{m}" />, then the solution is given by&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4bb117e6b3b80085a898004914ebb6fdb4c2174b" alt="f(n)=b_{1}b_{2}b_{3}\dots b_{m}1" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The proof of this follows from the representation of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;as&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5d47762830148c6b6f105d00392799cdf85b82f" alt="2^{m}+l" />&nbsp;or from the above expression for&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p>&nbsp;</p>
-<p><strong>Implementation: </strong></p>
-<p><strong>I</strong>f n denotes the number of people, the safe position is given by the function&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd6d4a1f2b5a1513ce9ab10163bf23fc51d948ce" alt="f(n)=2l+1" />&nbsp;,where&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b65df22179bdf0e35598d93bd6703a32c03100d8" alt="n=2^{m}+l" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5189a60581e81a21347624a6b5ab932a9e59e4c" alt="0\leq l&lt;2^{m}" />.</span></span></span></span></span></span></p>
-<p>Now if we represent the number in binary format, the first bit denotes&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/667d0154f26e56e3f7979803f08afac16b4dcb16" alt="2^{m}" />&nbsp;and remaining bits will denote&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/829091f745070b9eb97a80244129025440a1cfac" alt="l" />.</span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> For example, when n=41, its binary representation is</span></span></span></span></p>
-<p><strong>n = 1 0 1 0 0 1</strong></p>
-<p><strong>2<sup>m</sup>&nbsp;= 1 0 0 0 0 0</strong></p>
-<p><strong>l = 0 1 0 0 1</strong></p>
-<div class="cnblogs_code">
-<pre><span style="color: #008000;">/*</span><span style="color: #008000;">*
+I wrote this paragraph in my junior year on another blog platform.
+
+<https://www.cnblogs.com/HuisClos/p/8438960.html> 
+
+I move it over here.
+
+Surprisingly, I've read so many things in undergraduate years, but keep on nothing up until now :)
+
+-----
+
+
+
+n people (numbered 1 to n) around a circle,eliminate every second remaining person until only one survives.
+
+The problem — given the number of people, starting point, direction, and number to be skipped — is to choose the position in the initial circle to avoid execution.
+
+Solution:
+
+In the following, n denotes the number of people in the initial circle, and k denotes the count for each step, that is, k-1 people are skipped and the k-th is executed.
+
+The people in the circle are numbered from 1 to n.
+k=2
+
+We explicitly solve the problem when every second person will be killed, i.e. k=2. (For the more general case k\neq 2, we outline a solution below.) We express the solution recursively.
+
+Let f(n) denote the position of the survivor when there are initially n people (and k=2).
+
+The first time around the circle, all of the even-numbered people die.
+
+The second time around the circle, the new 2nd person dies, then the new 4th person, etc.;
+
+it's as though there were no first time around the circle.
+
+ 
+
+ 
+
+If the initial number of people was even, then the person in position x during the second time around the circle was originally in position 2x-1 (for every choice of x).
+
+Let n=2j. The person at f(j) who will now survive was originally in position 2f(j)-1.
+
+This gives us the recurrencef(2j)=2f(j)-1\;.
+
+ 
+
+If the initial number of people was odd, then we think of person 1 as dying at the end of the first time around the circle.
+
+Again, during the second time around the circle, the new 2nd person dies, then the new 4th person, etc. In this case, the person in position x was originally in position 2x+1.
+
+This gives us the recurrencef(2j+1)=2f(j)+1\;.
+
+When we tabulate the values of n and f(n) we see a pattern:
+n	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16
+f(n)	1	1	3	1	3	5	7	1	3	5	7	9	11	13	15	1
+
+This suggests that f(n) is an increasing odd sequence that restarts with f(n)=1 whenever the index n is a power of 2.
+
+Therefore, if we choose m and l so that n=2^{m}+l and 0\leq l<2^{m}, then f(n)=2\cdot l+1.
+
+It is clear that values in the table satisfy this equation. Or we can think that after l people are dead there are only 2^{m} people and we go to the 2l+1th person.
+
+He must be the survivor. So f(n)=2l+1. Below, we give a proof by induction.
+
+Theorem: If n=2^{m}+l and 0\leq l<2^{m}, then f(n)=2l+1.
+
+Proof: We use strong induction on n.
+
+            The base case n=1 is true.
+
+            We consider separately the cases when n is even and when n is odd.
+
+            If n is even, then choose l_{1} and m_{1} such that n/2=2^{{m_{1}}}+l_{1} and 0\leq l_{1}<2^{{m_{1}}}.Note that l_{1}=l/2.
+
+           We have f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1, where the second equality follows from the induction hypothesis.
+
+            If n is odd, then choose l_{1} and m_{1} such that (n-1)/2=2^{{m_{1}}}+l_{1} and 0\leq l_{1}<2^{{m_{1}}}. Note that l_{1}=(l-1)/2.
+
+           We have f(n)=2f((n-1)/2)+1=2((2l_{1})+1)+1=2l+1, where the second equality follows from the induction hypothesis.
+
+           This completes the proof.
+
+          We can solve for l to get an explicit expression for f(n):
+
+                                  f(n)=2(n-2^{{\lfloor \log _{2}(n)\rfloor }})+1
+
+          The most elegant form of the answer involves the binary representation of size n: f(n) can be obtained by a one-bit left cyclic shift of n itself.
+
+          If we represent n in binary as n=1b_{1}b_{2}b_{3}\dots b_{m}, then the solution is given by f(n)=b_{1}b_{2}b_{3}\dots b_{m}1.
+
+          The proof of this follows from the representation of n as 2^{m}+l or from the above expression for f(n).
+
+ 
+
+Implementation:
+
+If n denotes the number of people, the safe position is given by the function f(n)=2l+1 ,where n=2^{m}+l and 0\leq l<2^{m}.
+
+Now if we represent the number in binary format, the first bit denotes 2^{m} and remaining bits will denote l.
+
+For example, when n=41, its binary representation is
+
+n = 1 0 1 0 0 1
+
+2m = 1 0 0 0 0 0
+
+l = 0 1 0 0 1
+
+/**
      * 
      * @param n the number of people standing in the circle
      * @return the safe position who will survive the execution 
-     *   f(N) = 2L + 1 where N =2^M + L and 0 &lt;= L &lt; 2^M
-     </span><span style="color: #008000;">*/</span>
-    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">int</span> getSafePosition(<span style="color: #0000ff;">int</span><span style="color: #000000;"> n) {
-        </span><span style="color: #008000;">//</span><span style="color: #008000;"> find value of L for the equation</span>
-        <span style="color: #0000ff;">int</span> valueOfL = n -<span style="color: #000000;"> Integer.highestOneBit(n);
-        </span><span style="color: #0000ff;">int</span> safePosition = <span style="color: #800080;">2</span> * valueOfL  + <span style="color: #800080;">1</span><span style="color: #000000;">;
+     *   f(N) = 2L + 1 where N =2^M + L and 0 <= L < 2^M
+     */
+    public int getSafePosition(int n) {
+        // find value of L for the equation
+        int valueOfL = n - Integer.highestOneBit(n);
+        int safePosition = 2 * valueOfL  + 1;
         
-        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> safePosition;
-    }</span></pre>
-</div>
-<p><strong>&nbsp;</strong></p>
-<h3><span id="The_general_case" class="mw-headline">The general case:</span></h3>
-<p>The easiest way to solve this problem in the general case is to use&nbsp;<span style="text-decoration: underline;">dynamic programming</span>&nbsp;by performing the first step and then using the solution of the remaining problem. When the index starts from one, then the person at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/01d131dfd7673938b947072a13a9744fe997e632" alt="s" />&nbsp;shifts from the first person is in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/633e3382ad17eca58f0eed77d0c9ad8f87bdede5" alt="((s-1){\bmod  n})+1" />, where n is the total number of persons. </span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Let&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4ef1a721a08c16f494961f88532814d3939ada4c" alt="f(n,k)" />&nbsp;denote the position of the survivor. After the&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />-th person is killed, we're left with a circle of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fbd0b0f32b28f51962943ee9ede4fb34198a2521" alt="n-1" />, and we start the next count with the person whose number in the original problem was&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e7a87a95aa5ff9bf82bbf491d05de0be8ce065b1" alt="(k{\bmod  n})+1" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">The position of the survivor in the remaining circle would be<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1ff53206537da68d34dfade29810c342452a4691" alt="f(n-1,k)" />&nbsp;if we start counting at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92d98b82a3778f043108d4e20960a9193df57cbf" alt="1" />; </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">shifting this to account for the fact that we're starting at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e7a87a95aa5ff9bf82bbf491d05de0be8ce065b1" alt="(k{\bmod  n})+1" />&nbsp;yields the recurrence</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9e4ae914bf1305a14f2134cb6b5ec007372671d3" alt="f(n,k)=((f(n-1,k)+k-1){\bmod  n})+1,{\text{ with }}f(1,k)=1\,," /></span></span></dd></dl>
-<p>which takes the simpler form</p>
-<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/466bf5dce42cbb797e62f6209d6e638dbe17aa63" alt="g(n,k)=(g(n-1,k)+k){\bmod  n},{\text{ with }}g(1,k)=0" /></span></span></dd></dl>
-<p>if we number the positions from&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2aae8864a3c1fec9585261791a809ddec1489950" alt="{\displaystyle 0}" />&nbsp;to&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fbd0b0f32b28f51962943ee9ede4fb34198a2521" alt="n-1" />&nbsp;instead.</span></span></span></span></p>
-<p>This approach has&nbsp;running time&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/34109fe397fdcff370079185bfdb65826cb5565a" alt="O(n)" />, but for small&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />&nbsp;and large&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;there is another approach.</span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> The second approach also uses dynamic programming but has running time&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5dcf3e2dc7b376b4d26d7574a5dced51ca5909df" alt="O(k\log n)" />. </span></span></span></span></span></span></span></span></p>
-<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">It is based on considering killing&nbsp;<em>k</em>-th, 2<em>k</em>-th, ...,<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7bab96b09df2f168bfb8172e74be39f69ea65119" alt="(\lfloor n/k\rfloor k)" />-th people as one step, then changing the numbering.<sup class="noprint Inline-Template Template-Fact"><br /></sup></span></span></span></span></span></span></span></span></span></span></p>
-<p>This improved approach takes the form</p>
-<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/84e40e8e90bcd203df63c92c868dd2ef16d7d99b" alt="{\displaystyle g(n,k)={\begin{cases}0&amp;{\text{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&amp;{\text{if }}1&lt;n&lt;k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\text{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &amp;{\text{if }}k\leq n\\\end{cases}}}" /></span></span></dd></dl>
+        return safePosition;
+    }
+
+ 
+The general case:
+
+The easiest way to solve this problem in the general case is to use dynamic programming by performing the first step and then using the solution of the remaining problem. When the index starts from one, then the person at s shifts from the first person is in position ((s-1){\bmod n})+1, where n is the total number of persons.
+
+Let f(n,k) denote the position of the survivor. After the k-th person is killed, we're left with a circle of n-1, and we start the next count with the person whose number in the original problem was (k{\bmod n})+1.
+
+The position of the survivor in the remaining circle would bef(n-1,k) if we start counting at 1;
+
+shifting this to account for the fact that we're starting at (k{\bmod n})+1 yields the recurrence
+
+    f(n,k)=((f(n-1,k)+k-1){\bmod n})+1,{\text{ with }}f(1,k)=1\,,
+
+which takes the simpler form
+
+    g(n,k)=(g(n-1,k)+k){\bmod n},{\text{ with }}g(1,k)=0
+
+if we number the positions from {\displaystyle 0} to n-1 instead.
+
+This approach has running time O(n), but for small k and large n there is another approach.
+
+The second approach also uses dynamic programming but has running time O(k\log n).
+
+It is based on considering killing k-th, 2k-th, ...,(\lfloor n/k\rfloor k)-th people as one step, then changing the numbering.
+
+This improved approach takes the form
+
+    {\displaystyle g(n,k)={\begin{cases}0&{\text{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&{\text{if }}1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\text{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\text{if }}k\leq n\\\end{cases}}}
