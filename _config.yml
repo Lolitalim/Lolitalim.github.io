@@ -40,7 +40,7 @@ defaults:
       type: post
     values:
       tags: Diary
-   - scope:
+  - scope:
       path: ""
       type: post
     values:
