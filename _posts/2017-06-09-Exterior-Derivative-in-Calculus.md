@@ -14,19 +14,19 @@ I wrote this paragraph in my sophomore year on another blog platform.
 一次微分形式——线积分 <body><img src="/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/001.png" alt="001" style="width:128px;height:128px;"/></body>中出现的微分dx,dy,dz的一次式
 
 
-`                                             `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.002.png)
+`                                             `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.002.png)
 
 
 
-二次微分形式——面积分![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.003.png)中出现的微分dx,dy,dz的二次式  
+二次微分形式——面积分![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.003.png)中出现的微分dx,dy,dz的二次式  
 
-`                                         `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.004.png)
+`                                         `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.004.png)
 
 
 
-三次微分形式——体积分![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.005.png)中出现的微分dx,dy,dz的三次式
+三次微分形式——体积分![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.005.png)中出现的微分dx,dy,dz的三次式
 
-`                                                    `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.006.png)
+`                                                    `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.006.png)
 
 
 
@@ -46,7 +46,7 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 Green公式：
 
-`                          `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.007.png)
+`                          `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.007.png)
 
 
 
@@ -56,7 +56,7 @@ Green公式：
 
 Gauss公式：
 
-`                               `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.008.png)
+`                               `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.008.png)
 
 `                      `其中V为封闭曲面∑围成的闭区域，函数P、Q、R为V上有一阶连续偏微商的函数。
 
@@ -64,7 +64,7 @@ Gauss公式：
 
 Stokes公式：
 
-`                   `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.009.png)
+`                   `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.009.png)
 
 
 
@@ -90,7 +90,7 @@ Stokes公式：
 
 梯度：
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.010.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.010.png)
 
 
 
@@ -98,13 +98,13 @@ Stokes公式：
 
 ` `旋度：
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.011.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.011.png)
 
 
 
 散度：
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.012.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.012.png)
 
 
 
@@ -143,7 +143,7 @@ Stokes公式：
 
 三重积分同理也可定向。
 
-所以，曲线长度因方向不同被定义成正负，亦如单变量微积分中![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.013.png)的这个性质。
+所以，曲线长度因方向不同被定义成正负，亦如单变量微积分中![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.013.png)的这个性质。
 
 
 
@@ -155,7 +155,7 @@ Stokes公式：
 
 来张图吧
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.014.png)莫比乌斯带——不可定向
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.014.png)莫比乌斯带——不可定向
 
 
 
@@ -167,7 +167,7 @@ Stokes公式：
 
 
 
-根据二重积分定义，再将面积元素进行变元变换（看课本定义，不详细写）![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.015.png)
+根据二重积分定义，再将面积元素进行变元变换（看课本定义，不详细写）![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.015.png)
 
 
 
@@ -175,13 +175,13 @@ Stokes公式：
 
 但是现在，面积元素被允许有正负了，就没必要取绝对值了，就变成了这样
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.016.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.016.png)
 
 其中D已定向，D’是D经过变元逆变换得到的区域，自然是定向了的。
 
 所以，
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.017.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.017.png)
 
 
 
@@ -189,21 +189,21 @@ Stokes公式：
 
 （i）如果取y = x,则有
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.018.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.018.png)
 
 
 
 （ii）如果将y，x互换，则有
 
-` `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.019.png)![caculus](Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.020.png)
+` `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.019.png)![](Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.020.png)
 
 此时，dydx≠dxdy,即dx,dy在乘积中次序**不能颠倒**，否则就是**正负**的差别。
 
 
 
-满足上述两条的微分乘积被称为微分的外乘积，记为 ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.021.png)
+满足上述两条的微分乘积被称为微分的外乘积，记为 ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.021.png)
 
-即![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.022.png) 和  ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.023.png)    第二条和普通的微分乘积不同。
+即![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.022.png) 和  ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.023.png)    第二条和普通的微分乘积不同。
 
 外微分形式：
 
@@ -211,11 +211,11 @@ Stokes公式：
 
 若P、Q、R、A、B、C、H为x,y,z的函数，
 
-一次外微分形式：![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.024.png)
+一次外微分形式：![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.024.png)
 
-二次外微分形式：![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.025.png)
+二次外微分形式：![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.025.png)
 
-三次外微分形式：![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.026.png)
+三次外微分形式：![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.026.png)
 
 
 
@@ -225,19 +225,19 @@ Stokes公式：
 
 分配律：
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.027.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.027.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.028.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.028.png)
 
 交换律：
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.029.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.029.png)
 
 不满足结合律：
 
 若µ为p次外微分形式，λ为q次外微分形式
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.030.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.030.png)
 
 这些定律用于后期推广证明。
 
@@ -256,69 +256,69 @@ Stokes公式：
 
 零次外微分形式    函数 f 定义为
 
-`                      `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.031.png)，其实这里就是普通的全微分算子
+`                      `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.031.png)，其实这里就是普通的全微分算子
 
 
 
 
 
-一次外微分形式    ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.032.png)，定义为
+一次外微分形式    ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.032.png)，定义为
 
-`                 `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.033.png)
+`                 `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.033.png)
 
 
 
 `        `由于
 
-`              `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.034.png)
+`              `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.034.png)
 
-`               `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.035.png)
+`               `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.035.png)
 
-`               `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.036.png)
+`               `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.036.png)
 
 `      `所以
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.037.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.038.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.037.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.038.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.039.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.040.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.041.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.039.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.040.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.041.png)
 
 由于
 
-`   `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.042.png)
+`   `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.042.png)
 
-`  `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.043.png)  ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.044.png)    ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.045.png)
+`  `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.043.png)  ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.044.png)    ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.045.png)
 
 ` `所以
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.046.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.047.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.046.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.047.png)
 
 
 
 
 
-二次外微分形式 ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.048.png)，定义为
+二次外微分形式 ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.048.png)，定义为
 
-`     `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.049.png)
+`     `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.049.png)
 
 同理易得
 
-`       `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.050.png)
+`       `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.050.png)
 
 
 
-三次外微分形式 ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.051.png)，定义为
+三次外微分形式 ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.051.png)，定义为
 
-`       `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.052.png)
+`       `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.052.png)
 
 同理，由于
 
-`           `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.053.png)
+`           `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.053.png)
 
 所以
 
-`                 `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.054.png)
+`                 `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.054.png)
 
-`                         `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.055.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.056.png)
+`                         `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.055.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.056.png)
 
 为什么等于零？因为每一项中至少有两个微分是相同的
 
@@ -336,71 +336,71 @@ Stokes公式：
 
 就有
 
-`     `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.057.png)
+`     `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.057.png)
 
 然后
 
-`   `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.058.png)
+`   `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.058.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.059.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.060.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.061.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.059.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.060.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.061.png)
 
 由于
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.062.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.062.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.063.png)  ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.064.png)  ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.065.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.063.png)  ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.064.png)  ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.065.png)
 
 所以
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.066.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.067.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.066.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.067.png)
 
 假设f具有二阶连续偏微商，则有
 
-`       `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.068.png)    ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.069.png)   ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.070.png)
+`       `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.068.png)    ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.069.png)   ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.070.png)
 
 所以
 
-`                    `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.071.png)
+`                    `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.071.png)
 
 
 
 
 
-一次外微分形式  ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.072.png)
+一次外微分形式  ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.072.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.073.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.073.png)
 
-`       `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.074.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.075.png)
+`       `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.074.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.075.png)
 
 于是
 
 
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.076.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.077.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.076.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.077.png)
 
 
 
 
 
-` `二次外微分形式![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.078.png)
+` `二次外微分形式![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.078.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.079.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.079.png)
 
-易得![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.080.png)
+易得![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.080.png)
 
 
 
-三次外微分形式![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.081.png)
+三次外微分形式![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.081.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.082.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.082.png)
 
-易得  ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.083.png)
+易得  ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.083.png)
 
 
 
 这就是**Poincaré引理：**
 
-**若ω为一个外微分形式，其微分形式的系数具有二阶连续偏微商，则![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.084.png)。**
+**若ω为一个外微分形式，其微分形式的系数具有二阶连续偏微商，则![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.084.png)。**
 
 
 
@@ -408,7 +408,7 @@ Stokes公式：
 
 先阐述**Poincaré引理之逆：**
 
-**若ω是一个p次外微分式且![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.085.png)，则存在一个p-1次外微分形式 a，使![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.086.png)。**
+**若ω是一个p次外微分式且![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.085.png)，则存在一个p-1次外微分形式 a，使![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.086.png)。**
 
 
 
@@ -431,39 +431,39 @@ Stokes公式：
 
 零次外微分形式 ω = f, 零次外微分形式的外微分
 
-`     `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.087.png)
+`     `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.087.png)
 
 又 f 的梯度为
 
-`  `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.088.png)
+`  `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.088.png)
 
 所以**梯度**与**零次外微分形式的外微分**相对应。
 
 
 
-一次外微分形式![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.089.png)的外微分
+一次外微分形式![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.089.png)的外微分
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.090.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.091.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.090.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.091.png)
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.092.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.092.png)
 
-又矢量 ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.093.png)的旋度为
+又矢量 ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.093.png)的旋度为
 
-`     `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.094.png)
+`     `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.094.png)
 
-`                `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.095.png)
+`                `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.095.png)
 
 所以**旋度**与**一次外微分形式的外微分**相对应。
 
 
 
-二次外微分形式![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.096.png)的外微分
+二次外微分形式![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.096.png)的外微分
 
-`     `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.097.png)
+`     `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.097.png)
 
-` `又矢量![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.098.png)的散度
+` `又矢量![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.098.png)的散度
 
-`     `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.099.png)
+`     `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.099.png)
 
 
 
@@ -503,29 +503,29 @@ Stokes公式：
 
 Poincaré引理中
 
-当ω为零次外微分形式ω = f,有![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.100.png)
+当ω为零次外微分形式ω = f,有![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.100.png)
 
-即 ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.101.png)
+即 ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.101.png)
 
 
 
-当ω为一次外微分形式![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.102.png)，记![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.103.png)，有 ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.104.png)
+当ω为一次外微分形式![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.102.png)，记![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.103.png)，有 ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.104.png)
 
-` `即 ![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.105.png)
+` `即 ![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.105.png)
 
 
 
 Poincaré引理之逆中
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.106.png)等价于![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.107.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.106.png)等价于![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.107.png)
 
-即![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png)必有![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
+即![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png)必有![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
 
 
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.110.png)等价于![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.111.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.112.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.110.png)等价于![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.111.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.112.png)
 
-即![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png)必有![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
+即![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png)必有![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
 
 
 
@@ -536,15 +536,15 @@ Poincaré引理之逆中
 
 Green公式
 
-![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.113.png)
+![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.113.png)
 
-记![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.114.png)，为一次外微分形式，于是
+记![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.114.png)，为一次外微分形式，于是
 
-`        `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.115.png)
+`        `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.115.png)
 
 又线积分L可定向，所以该公式可写成
 
-`                      `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.116.png)
+`                      `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.116.png)
 
 
 
@@ -552,15 +552,15 @@ Green公式
 
 同理，Gauss公式
 
-`   `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.117.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.118.png)
+`   `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.117.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.118.png)
 
-又Σ定向，所以记![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.119.png)
+又Σ定向，所以记![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.119.png)
 
-`                   `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.120.png)
+`                   `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.120.png)
 
 该公式可写成
 
-`                   `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.121.png)
+`                   `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.121.png)
 
 
 
@@ -568,23 +568,23 @@ Green公式
 
 同理Stokes公式
 
-`              `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.122.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.123.png)
+`              `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.122.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.123.png)
 
-又线、面积分都为定向，将![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.124.png)看作一次外微分形式
+又线、面积分都为定向，将![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.124.png)看作一次外微分形式
 
-`          `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.125.png)![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.126.png)
+`          `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.125.png)![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.126.png)
 
 
 
 所以该公式可写成
 
-`                      `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.127.png)
+`                      `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.127.png)
 
 
 
 综上，可以看出，**Green公式、Gauss公式、Stokes公式实际上是一个公式**
 
-`                                                                         `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
+`                                                                         `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
 
 其中ω为外微分形式，dω为ω的外微分，Σ为dω的封闭积分区域，∂Σ为Σ的边界，∫为区域有多少维数即多少重数。
 
@@ -606,7 +606,7 @@ Green公式
 
 再写一遍
 
-`                                       `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
+`                                       `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
 
 这个公式还可以推广到更一般的流形上（这个未来再说）
 
