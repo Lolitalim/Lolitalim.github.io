@@ -12,7 +12,7 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 
 
-一次微分形式——线积分<img title="001" src="/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.001.png"/>中出现的微分dx,dy,dz的一次式
+一次微分形式——线积分<img src="/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.001.png"/>中出现的微分dx,dy,dz的一次式
 
 `                                             `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.002.png)
 
