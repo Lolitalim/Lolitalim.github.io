@@ -13,7 +13,7 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 一次微分形式——线积分 [001](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/001.png) 中出现的微分dx,dy,dz的一次式
 
-  ![002](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.002.png)
+  ![002](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/002.png)
                                       
 
 
