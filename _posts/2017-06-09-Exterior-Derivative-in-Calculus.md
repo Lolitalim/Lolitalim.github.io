@@ -1,6 +1,7 @@
 ﻿Remarks:
 
 I wrote this paragraph in my sophomore year on another blog platform.
+
 <http://www.cnblogs.com/HuisClos/articles/6966036.html> 
 
 -----
@@ -13,20 +14,20 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 一次微分形式——线积分 ![001](/docs/assets/img/ExteriorDerivativeInCalculus/001.png) 中出现的微分dx,dy,dz的一次式
 
-  ![002](/docs/assets/img/ExteriorDerivativeInCalculus/002.png)
+                    ![002](/docs/assets/img/ExteriorDerivativeInCalculus/002.png)
                                       
 
 
 
-二次微分形式——面积分![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.003.png)中出现的微分dx,dy,dz的二次式  
+二次微分形式——面积分![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.003.png) 中出现的微分dx,dy,dz的二次式  
 
-`                                         `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.004.png)
+                                         ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.004.png)
 
 
 
-三次微分形式——体积分![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.005.png)中出现的微分dx,dy,dz的三次式
+三次微分形式——体积分![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.005.png) 中出现的微分dx,dy,dz的三次式
 
-`                                                    `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.006.png)
+                                                    ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.006.png)
 
 
 
@@ -46,29 +47,29 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 Green公式：
 
-`                          `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.007.png)
+                          ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.007.png)
 
 
 
-`                        `其中D为L围成的闭区域，P、Q为D上的具有一阶连续偏微商的函数。 
+                        其中D为L围成的闭区域，P、Q为D上的具有一阶连续偏微商的函数。 
 
 
 
 Gauss公式：
 
-`                               `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.008.png)
+                               ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.008.png)
 
-`                      `其中V为封闭曲面∑围成的闭区域，函数P、Q、R为V上有一阶连续偏微商的函数。
+                      其中V为封闭曲面∑围成的闭区域，函数P、Q、R为V上有一阶连续偏微商的函数。
 
 
 
 Stokes公式：
 
-`                   `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.009.png)
+                   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.009.png)
 
 
 
-`                        `其中封闭曲线L为曲面∑的边界，P、Q、R为V上有一阶连续偏微商的函数。
+                        其中封闭曲线L为曲面∑的边界，P、Q、R为V上有一阶连续偏微商的函数。
 
 
 
@@ -96,7 +97,7 @@ Stokes公式：
 
 
 
-` `旋度：
+旋度：
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.011.png)
 
@@ -143,7 +144,7 @@ Stokes公式：
 
 三重积分同理也可定向。
 
-所以，曲线长度因方向不同被定义成正负，亦如单变量微积分中![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.013.png)的这个性质。
+所以，曲线长度因方向不同被定义成正负，亦如单变量微积分中![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.013.png) 的这个性质。
 
 
 
@@ -155,7 +156,7 @@ Stokes公式：
 
 来张图吧
 
-![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.014.png)莫比乌斯带——不可定向
+![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.014.png) 莫比乌斯带——不可定向
 
 
 
@@ -167,7 +168,8 @@ Stokes公式：
 
 
 
-根据二重积分定义，再将面积元素进行变元变换（看课本定义，不详细写）![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.015.png)
+根据二重积分定义，再将面积元素进行变元变换（看课本定义，不详细写）
+![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.015.png)
 
 
 
@@ -195,7 +197,7 @@ Stokes公式：
 
 （ii）如果将y，x互换，则有
 
-` `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.019.png)![](Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.020.png)
+ ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.019.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.020.png)
 
 此时，dydx≠dxdy,即dx,dy在乘积中次序**不能颠倒**，否则就是**正负**的差别。
 
@@ -256,27 +258,27 @@ Stokes公式：
 
 零次外微分形式    函数 f 定义为
 
-`                      `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.031.png)，其实这里就是普通的全微分算子
+                  ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.031.png) ,其实这里就是普通的全微分算子
 
 
 
 
 
-一次外微分形式    ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.032.png)，定义为
+一次外微分形式    ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.032.png) ，定义为
 
-`                 `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.033.png)
+                 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.033.png)
 
 
 
-`        `由于
+        由于
 
-`              `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.034.png)
+              ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.034.png)
 
-`               `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.035.png)
+               ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.035.png)
 
-`               `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.036.png)
+               ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.036.png)
 
-`      `所以
+      所以
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.037.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.038.png)
 
@@ -284,11 +286,12 @@ Stokes公式：
 
 由于
 
-`   `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.042.png)
+   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.042.png)
 
-`  `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.043.png)  ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.044.png)    ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.045.png)
+  ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.043.png)  ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.044.png)   
+ ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.045.png)
 
-` `所以
+ 所以
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.046.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.047.png)
 
@@ -296,29 +299,29 @@ Stokes公式：
 
 
 
-二次外微分形式 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.048.png)，定义为
+二次外微分形式 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.048.png) ，定义为
 
-`     `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.049.png)
+     ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.049.png)
 
 同理易得
 
-`       `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.050.png)
+       ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.050.png)
 
 
 
-三次外微分形式 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.051.png)，定义为
+三次外微分形式 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.051.png) ，定义为
 
-`       `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.052.png)
+       ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.052.png)
 
 同理，由于
 
-`           `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.053.png)
+           ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.053.png)
 
 所以
 
-`                 `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.054.png)
+                 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.054.png)
 
-`                         `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.055.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.056.png)
+                         ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.055.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.056.png)
 
 为什么等于零？因为每一项中至少有两个微分是相同的
 
@@ -336,11 +339,11 @@ Stokes公式：
 
 就有
 
-`     `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.057.png)
+     ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.057.png)
 
 然后
 
-`   `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.058.png)
+   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.058.png)
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.059.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.060.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.061.png)
 
@@ -356,11 +359,11 @@ Stokes公式：
 
 假设f具有二阶连续偏微商，则有
 
-`       `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.068.png)    ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.069.png)   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.070.png)
+       ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.068.png)    ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.069.png)   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.070.png)
 
 所以
 
-`                    `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.071.png)
+                    ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.071.png)
 
 
 
@@ -370,7 +373,7 @@ Stokes公式：
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.073.png)
 
-`       `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.074.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.075.png)
+       ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.074.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.075.png)
 
 于是
 
@@ -382,7 +385,7 @@ Stokes公式：
 
 
 
-` `二次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.078.png)
+ 二次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.078.png)
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.079.png)
 
@@ -400,7 +403,7 @@ Stokes公式：
 
 这就是**Poincaré引理：**
 
-**若ω为一个外微分形式，其微分形式的系数具有二阶连续偏微商，则![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.084.png)。**
+**若ω为一个外微分形式，其微分形式的系数具有二阶连续偏微商，则 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.084.png)。**
 
 
 
@@ -431,39 +434,39 @@ Stokes公式：
 
 零次外微分形式 ω = f, 零次外微分形式的外微分
 
-`     `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.087.png)
+     ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.087.png)
 
 又 f 的梯度为
 
-`  `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.088.png)
+  ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.088.png)
 
 所以**梯度**与**零次外微分形式的外微分**相对应。
 
 
 
-一次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.089.png)的外微分
+一次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.089.png) 的外微分
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.090.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.091.png)
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.092.png)
 
-又矢量 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.093.png)的旋度为
+又矢量 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.093.png) 的旋度为
 
-`     `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.094.png)
+     ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.094.png)
 
-`                `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.095.png)
+                ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.095.png)
 
 所以**旋度**与**一次外微分形式的外微分**相对应。
 
 
 
-二次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.096.png)的外微分
+二次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.096.png) 的外微分
 
-`     `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.097.png)
+     ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.097.png)
 
-` `又矢量![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.098.png)的散度
+ 又矢量![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.098.png) 的散度
 
-`     `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.099.png)
+     ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.099.png)
 
 
 
@@ -485,11 +488,11 @@ Stokes公式：
 
 外微分形式的次数       度
 
-`       `0                    梯度
+       0                    梯度
 
-`       `1                    旋度
+       1                    旋度
 
-`       `2                    散度
+       2                    散度
 
 
 
@@ -509,23 +512,23 @@ Poincaré引理中
 
 
 
-当ω为一次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.102.png)，记![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.103.png)，有 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.104.png)
+当ω为一次外微分形式![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.102.png) ，记 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.103.png)，有 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.104.png)
 
-` `即 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.105.png)
+ 即 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.105.png)
 
 
 
 Poincaré引理之逆中
 
-![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.106.png)等价于![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.107.png)
+![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.106.png) 等价于 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.107.png)
 
-即![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png)必有![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
+即![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png) 必有 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
 
 
 
-![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.110.png)等价于![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.111.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.112.png)
+![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.110.png) 等价于 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.111.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.112.png)
 
-即![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png)必有![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
+即![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.108.png) 必有 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.109.png)
 
 
 
@@ -539,13 +542,13 @@ Green公式
 
 ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.113.png)
 
-记![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.114.png)，为一次外微分形式，于是
+记![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.114.png) ，为一次外微分形式，于是
 
-`        `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.115.png)
+        ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.115.png)
 
 又线积分L可定向，所以该公式可写成
 
-`                      `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.116.png)
+                      ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.116.png)
 
 
 
@@ -553,15 +556,15 @@ Green公式
 
 同理，Gauss公式
 
-`   `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.117.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.118.png)
+   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.117.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.118.png)
 
 又Σ定向，所以记![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.119.png)
 
-`                   `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.120.png)
+                   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.120.png)
 
 该公式可写成
 
-`                   `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.121.png)
+                   ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.121.png)
 
 
 
@@ -569,23 +572,23 @@ Green公式
 
 同理Stokes公式
 
-`              `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.122.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.123.png)
+              ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.122.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.123.png)
 
-又线、面积分都为定向，将![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.124.png)看作一次外微分形式
+又线、面积分都为定向，将![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.124.png) 看作一次外微分形式
 
-`          `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.125.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.126.png)
+          ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.125.png)![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.126.png)
 
 
 
 所以该公式可写成
 
-`                      `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.127.png)
+                      ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.127.png)
 
 
 
 综上，可以看出，**Green公式、Gauss公式、Stokes公式实际上是一个公式**
 
-`                                                                         `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
+                                                                         ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
 
 其中ω为外微分形式，dω为ω的外微分，Σ为dω的封闭积分区域，∂Σ为Σ的边界，∫为区域有多少维数即多少重数。
 
@@ -607,7 +610,7 @@ Green公式
 
 再写一遍
 
-`                                       `![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
+                                       ![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.128.png)
 
 这个公式还可以推广到更一般的流形上（这个未来再说）
 
@@ -615,13 +618,13 @@ Green公式
 
 外微分形式的次数      空间           公式
 
-`      `0                    直线段         Newton-Leibniz公式
+      0                    直线段         Newton-Leibniz公式
 
-`      `1                    平面区域      Green公式
+      1                    平面区域      Green公式
 
-`      `1                    空间曲面      Stokes公式
+      1                    空间曲面      Stokes公式
 
-`      `2                    空间中区域   Gauss公式
+      2                    空间中区域   Gauss公式
 
 
 
