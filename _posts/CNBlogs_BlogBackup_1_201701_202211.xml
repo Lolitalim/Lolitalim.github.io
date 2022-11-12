@@ -1,0 +1,1454 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/"><channel><title>博客园-HuisClos</title><link>http://www.cnblogs.com/HuisClos/</link><description /><language>zh-cn</language><lastBuildDate>Sat, 12 Nov 2022 19:48:06 GMT</lastBuildDate><pubDate>Sat, 12 Nov 2022 19:48:06 GMT</pubDate><ttl>60</ttl><item><title>[two pointers]Codeforces - 1166C - A Tale of Two Lands</title><link>http://www.cnblogs.com/HuisClos/archive/2019/05/22/10897317.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Wed, 22 May 2019 14:09:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2019/05/22/10897317.html</guid><description><![CDATA[<div class="header">
+<div class="title">http://codeforces.com/problemset/problem/1166/C</div>
+<div class="title">分析：给定n 个数，其中有x,y,... 满足 min(∣x&minus;y∣,∣x+y∣) &le; min(∣x∣,∣y∣)且 max(∣x∣,∣y∣) &le; max(∣x&minus;y∣,∣x+y∣)&nbsp;</div>
+</div>]]></description></item><item><title>[Algorithms]Constructive Algorithm构造算法</title><link>http://www.cnblogs.com/HuisClos/archive/2019/05/08/10831914.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Wed, 08 May 2019 07:02:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2019/05/08/10831914.html</guid><description><![CDATA[<p>构造算法是什么</p>
+<p style="margin-left: 30px;"><span style="font-family: 'comic sans ms', sans-serif;">It's an algorithm which builds something. A graph, an array, a matrix etc. It's what test generators use to build test cases.</span></p>
+<p>就是数学中的proof，</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;constrcutive proof:具体地给出某一对象或者能给出某一对象的计算方法</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Non-constructive proof :证明的过程中，不举例而只证明语句是否正确。通常使用反正法</p>
+<div class="para">&nbsp;</div>
+<p>Example:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p style="text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 18px;">CF1157D N Problems During K Days</span><br />Polycarp has to solve exactly n problems to improve his programming skill before an important programming competition. But this competition will be held very soon, most precisely, it will start in k days. It means that Polycarp has exactly k days for training!<br />Polycarp doesn't want to procrastinate, so he wants to solve at least one problem during each of k days. He also doesn't want to overwork, so if he solves x problems during some day, he should solve no more than 2x problems during the next day. And, at last, he wants to improve his skill, so if he solves x problems during some day, he should solve at least x+1 problem during the next day.</p>
+<p style="text-align: left;">More formally: let [a1,a2,&hellip;,ak] be the array of numbers of problems solved by Polycarp. The i-th element of this array is the number of problems Polycarp solves during the i-th day of his training. Then the following conditions must be satisfied:</p>
+<p style="text-align: left;">sum of all ai for i from 1 to k should be n;<br />ai should be greater than zero for each i from 1 to k;<br />the condition ai&lt;ai+1&le;2ai should be satisfied for each i from 1 to k&minus;1.<br />Your problem is to find any array a of length k satisfying the conditions above or say that it is impossible to do it.</p>
+<p style="text-align: left;">Input<br />The first line of the input contains two integers n and k (1&le;n&le;10<sup>9</sup>,1&le;k&le;10<sup>5</sup>) &mdash; the number of problems Polycarp wants to solve and the number of days Polycarp wants to train.</p>
+<p style="text-align: left;">Output<br />If it is impossible to find any array a of length k satisfying Polycarp's rules of training, print "NO" in the first line.</p>
+<p style="text-align: left;">Otherwise print "YES" in the first line, then print k integers a1,a2,&hellip;,ak in the second line, where ai should be the number of problems Polycarp should solve during the i-th day. If there are multiple answers, you can print any.</p>
+<p style="text-align: left;">&nbsp;题意：</p>
+<p style="text-align: left;">构造一个数列a<sub>n</sub>,使&sum;a<sub>n</sub>= n,1&lt;=i &lt;=k,0&lt;a<sub>i</sub>&lt;a<sub>i+1</sub>&le;2a<sub>i</sub></p>
+<p style="text-align: left;">分析：</p>
+<p style="text-align: left;">该数列在有上下界约束条件下单调递增，</p>
+<p style="text-align: left;">下界：公差为1的等差数列求和</p>
+<p style="text-align: left;">上界：公比为2的等比数列求和</p>
+<p style="text-align: left;">对每个a<sub>i</sub>,,,a<sub>k</sub>的子数列首项（即当前a<sub>i</sub>）采取greedy，取当前上下界约束条件下的最大值（使当前子数列达到最优解，尽可能多）。</p>
+<p style="text-align: left;">注：求满足上界约束的a<sub>i</sub>时要上取整，下取整会达不到上界</p>
+<p style="text-align: left;">排除情况：</p>
+<p style="text-align: left;">不满足下界约束：子数列之和下界大于当前n</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:cpp;gutter:true;">#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+using namespace std;
+long long a[110000];
+long long sum(long long m)
+{
+    return m*(m+1)/2;
+}
+int main()
+{
+    int n,k;
+    cin&gt;&gt;n&gt;&gt;k;
+    for(int i=1;i&lt;=k;i++)
+    {
+        long long ans=max((int)(a[i-1]+1),(int)ceil((double)n/(double)(pow(2.0,k+1-i)-1)));//约束条件下的greedy
+        if(sum(ans-i+k)-sum(ans-1)&gt;n)//下界约束情况排除
+        {
+            cout&lt;&lt;"NO"&lt;&lt;endl;
+            return 0;
+        }
+        a[i]=ans;
+        n-=ans;//更新当前n
+    }
+    cout&lt;&lt;"YES"&lt;&lt;endl;
+    for(int i=1;i&lt;=k;i++)
+    {
+        cout&lt;&lt;a[i]&lt;&lt;" ";
+    }
+    return 0;
+}
+</pre>
+</div>
+<p>　</p>]]></description></item><item><title>[Data Structure]线性表Linear List2</title><link>http://www.cnblogs.com/HuisClos/archive/2019/02/13/10367625.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Tue, 12 Feb 2019 16:08:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2019/02/13/10367625.html</guid><description><![CDATA[# 线性表
+[TOC]
+
+## 链接表（链表）
+线性表实现的基本需要：
+* 能够找到表中的首元素（无论直接或间接，通常很容易做到）
+* 从表里的任一个元素出发，可以找到它之后的下一个元素
+
+ 显然，把表元素保存在连续的存储区里，自然满足这两个需求，顺序关联是隐含的。但满足这两种需求，并不一定要连续存储元素
+
+实现线性表的另一方式是基于链接结构，用链接显式地表示元素之间的顺序关联。基于链接技术实现的线性表称为链接表或链表
+
+实现链接表的基本想法：
+* 把表元素分别存储在一批独立的存储块（称为结点）里
+    *  保证从一个元素的结点可找到与其相关的下一个元素的结点
+    * 在结点里用链接的方式显式记录元素（结点）之间的关联
+* 这样，只要知道表中第一个结点，就能顺序找到表里其他元素
+
+
+## 表的实现——链接表
+ 链接表有多种不同的组织方式。下面先讨论最简单的单链表，其中每个结点里记录着下一元素的结点的标识。
+ 
+## 单链表
+ 单链表结点的形式（链接域保存下一结点的标识）
+ ![0f711736e57676680640be234efc5d5a.png](en-resource://database/2815:0)
+ 
+ 在单链表里，与表里的 n 个元素对应的 n 个结点通过链接形成一条结点链。从表里的任一个结点都可以找到保存下一个元素的结点
+
+ 要掌握一个单链表，就需要（也仅需要）掌握表的首结点，从它
+* 可以找到表的首元素（表里保存的数据）
+*  还可以找到表中下一结点的位置
+按同样方式继续下去，就可以找到表里的所有数据元素
+
+表头变量：保存着链表第一个结点的标识（链接）的变量
+![8cb892a7ff66d09b02df9bceddb328c9.png](en-resource://database/2817:0)
+
+
+一个具体的表由一些具体结点构成
+* 每个结点（对象）有自己的标识（下面也常直接称其为链接）
+* 结点之间通过结点链接建立起顺序联系
+*  给表的最后一个结点（表尾结点）的链接域设置一个不会作为结点对象标识的值（Python 里自然应该用 None），称为空链接
+
+通过判断是否空链接，可以知道是否已经到了表的结束
+* 在做检索表中元素的工作时，据此判断检索工作是否完成
+* 如果表头指针的值是空链接，说明“它所引用的表已经结束”。没有元素就已经结束，说明这个表是空表
+
+ 在实现算法时，我们并不需要关心具体的表里各结点的具体链接的值是什么（它们总保存在表结构里），只需要关心链表的逻辑结构
+ * 链表的操作也只需根据链表的逻辑结构考虑和实现
+ 
+ ## 单链表操作：基本操作
+ 考虑链接表的几个基本操作：
+* 创建空链表：只需将表头变量设置为空链接
+   在 Python 里将其设置为 None
+* 删除链表：丢弃表的所有结点，与具体环境有关
+   * 在一些语言（如 C 语言）里需要做许多事情，释放所用存储
+   * 在 Python 里，只需简单将表指针设 None，就丢掉了整个链表的所有结点。 Python 程序的存储管理系统会自动回收不用的存储
+* 判断表是否为空：将表头变量的值与空链接比较
+   * 在 Python 里检查其值是否为 None
+* 判断表是否满：链接表不会满，除非存储空间用完
+
+## 单链表操作：加入元素
+给单链表加入元素的一些基本情况
+* 位置可以为首端，尾端，定位。不同位置的操作复杂性可能不同
+* 加入元素不需要移动已有数据，只需为新元素安排一个新结点，然后把新结点连接在表里所需的位置
+
+通过修改链接，改变表的结构
+
+首端加入： 1) 创建一个新结点存入数据； 2) 把原链表首结点的链接存入新结点的链接域； 3) 修改表头变量使之引用新结点
+![8e688d9396eba90a17b6b2f0cf1f5ce0.png](en-resource://database/2819:0)
+
+尾端加入： 1) 创建一个新结点存入数据； 2) 表空时直接让表头变量引用这个新结点并结束，否则找到表尾结点； 3) 令表尾结点的链接域引用这一新结点，并将新结点的链接域设置为空链接
+![a88944c4e5b2df5dd113a63cbb9c49b2.png](en-resource://database/2821:0)
+
+定位加入： 1) 找到新结点加入位置的前一结点，不存在时结束； 2) 创建新结点存入数据； 3) 修改前一结点和新结点的链接域将结点连入
+![78a119d04e7e71306355b9950ab8237e.png](en-resource://database/2823:0)
+
+##  单链表操作：删除元素
+删除元素，所用技术与加入元素类似
+*  首端删除：直接修改表头指针，使之引用当时表头结点的下一个结点。Python 系统里会自动回收无用对象的存储块，下同
+* 尾端删除：找到倒数第二个结点，将其链接域设置为空链接
+* 定位删除：找到要删除元素所在结点的前一结点，修改它的链接域将要求删除的结点从表中去掉
+![0aeb9ca386c2684a3d6294b54f87ab0a.png](en-resource://database/2825:0)
+## 单链表操作：扫描和遍历
+许多操作中需要扫描表里一个个结点，可能检查其中的元素，如
+* 这种操作的过程称为遍历，顺序检查一个数据结构的所有元素
+* 求表元素的个数
+* 在表中查找特定位置的元素，或查找满足某些条件的元素
+进行这类操作，都需要用一个（或几个）扫描变量
+有些表操作比较复杂，例如表元素排序
+（排序 待续）
+## 单链表操作：复杂性
+ 基本操作：
+ * 创建空表： O(1)
+ * 删除表：在 Python 里是 O(1)。当然存储管理也需要时间
+ * 判断空表： O(1)
+
+ 加入元素（都需要加一个 T(分配) 的时间）：
+ * 首端加入元素： O(1)
+ * 尾端加入元素： O(n)，因为需要找到表的最后结点
+ * 定位加入元素： O(n)，平均情况和最坏情况
+ 
+ 删除元素：
+ * 首端删除元素： O(1)；尾端删除： O(n)
+ * 定位删除元素： O(n)，平均情况和最坏情况
+ * 其他删除通常需要扫描整个表或其一部分， O(n) 操作
+
+其他操作，如果需要扫描整个表或其一部分，都是 O(n) 操作。如
+* 求表的长度（表中元素个数）
+* 定位表中的元素；等等
+
+一类典型的表操作是扫描整个表，对表中每个元素做同样的工作（即遍历操作）。例如，输出所有的元素值，将它们累积到一个变量里等。
+这种工作可以通过一个循环完成
+遍历操作的复杂性应该是 O(n) * T(元素操作)
+
+有可能改造表的表示方式，提高一些操作的效率。例如，如果工作中经常需要求表长度，可以考虑采用下面结构（加一个表头对象）：
+![a741dbf021efd1dca81e45c3b7df39a2.png](en-resource://database/2827:0)
+ 这样，在加入/删除元素时需要维护个数记录，有得有失
+ 
+ ## 单链表的Python实现
+ 实现链接结构，需要定义相应的类，首先是表示结点的类
+  下面是一个简单的结点类：
+```
+ class LNode : # 只定义初始化操作
+     def __init__(self, elm, nxt):
+       self.elem = elm
+       self.next = nxt
+```
+ 简单的使用代码（Python 允许直接访问对象的普通数据域）：
+```
+llist1 = LNode(1, None); pnode = llist1
+for i in range(2, 11):
+   pnode.next = LNode(i, None)
+   pnode = pnode.next
+pnode = llist1
+while pnode is not None:
+   print(pnode.elem)
+  pnode = pnode.next
+```
+
+## 单链表的实现：几个基本操作
+基于结点 LNode 定义一种链接表类型，为此定义一个表类
+```
+class LList:
+   def __init__(self):
+      self.head = None
+
+   def isEmpty(self):
+      return self.head == None
+    
+   def prepend(self, elem):
+       self.head = LNode(elem, self.head
+```
+LList 对象只有一个 head 域，指向表中的首结点。几个操作（方法）：
+* 初始建立的表里没有结点（空表）
+* 根据 head 的值判断是否空表
+* prepend 在表首端加入一个包含新元素的（新）结点
+
+## 单链表的实现：尾端加入
+ append 在表最后加入一个包含新元素的结点
+```
+def append(self, elem):
+   if self.head == None:
+   self.head = LNode(elem, None)
+   return
+p = self.head
+while p.next != None:
+    p = p.next
+p.next = LNode(elem, None)
+```
+注意，这里需要区分两种情况：
+* 如果加入新元素时原表为空，就用 head 记录新加的结点
+* 如果表不空，需要先通过循环找到当时表里的最后一个结点，然后用这个结点的 next 域记录新结点的链接
+* 复杂性（最坏情况）显然为 O(n)
+
+## 单链表实现：首/尾端弹出
+ 首/尾端弹出元素的方法（删除操作与此类似）
+```
+def pop(self): # 首端弹出
+   if self.head == None:
+       raise ValueError
+   e = self.head.elem
+   self.head = self.head.next
+   return e
+
+def poplast(self): # 尾端弹出，显然复杂性为 O(n)
+   if self.head == None: # empty list
+      raise ValueError
+   p = self.head
+  if p.next == None: # list with only one element
+     e = p.elem; self.head = None
+     return e
+   while p.next.next != None: # till p.next be the last node
+   p = p.next
+  e = p.next.elem; p.next = None
+  return e
+```
+##单链表实现：其他操作
+```
+def find(self, pred): # 在表里找到第一个满足 pred 的元素返回
+    p = self.head
+    while p != None:
+       if pred(p.elem):
+          return p.elem
+         p = p.next
+       return None
+
+ def printall(self): # 输出表中所有元素
+    p = self.head
+   while p != None:
+       print(p.elem)
+       p = p.next
+```
+
+## 单链表的变形
+单链表并非只有一种设计，可以根据需要和认识修改设计，例如
+* 前面实现的一个缺点是尾端加入操作的效率低
+* 实际中可能经常需要频繁地在表的两端加入元素
+
+一种可能是采用下面的结构，给表对象增加一个对表尾结点的引用：
+![f603ef45971a03212e93a6d4dfc83025.png](en-resource://database/2829:0)
+ 这样，在尾端加入元素，也能做到 O(1)
+
+* 注意：新设计的链表与前面单链表结构近似，结构变化应该只影响到表的变动操作，非变动操作不需要修改。有可能重用前面定义吗？
+
+## 单链表的变形:带尾节点引用
+面向对象技术支持基于已有的类（基类）定义新类（派生类）
+* 派生类继承其基类的所有功能（数据域和方法）
+* 派生类可以定义新的数据域，定义新的方法
+* 派生类可以重新定义基类里已定义的方法（覆盖已有方法）
+
+回到链表，我们可以基于 LList 定义（具有前述结构的）新链表类
+* 让它继承 LList 的所有非变动操作
+* 增加一个尾结点引用域，重新定义表的变动操作
+
+通过继承方式定义新类
+     class LList1(LList) :
+
+Python 规定，定义时不注明基类，自动以公共类 object 作为基类
+   前面的 LNode 和 LList 都以 object 作为基类
+
+LList1 定义为 LList 的派生类，覆盖 LList 的一些方法
+```
+class LList1(LList):
+   def __init__(self):
+      LList.__init__(self) # 调用 LList 的初始化方法
+      self.rear = None
+
+def prepend(self, elem):
+     self.head = LNode(elem, self.head)
+     if self.rear == None: # the empty list
+     self.rear = self.head # rear points also to the new node
+
+def append(self, elem):
+     if self.head == None:
+        self.prepend(elem) # call prepend, do the same
+    else:
+        self.rear.next = LNode(elem, None)
+        self.rear = self.rear.next
+```
+ 首端和尾端删除方法也需要覆盖
+```
+def pop(self):
+     if self.head is None:
+        raise ValueError
+     e = self.head.elem
+     if self.rear is self.head: # list with one node
+        self.rear = None
+     self.head = self.head.next
+     return e
+
+def poplast(self):
+     return None # to be implemented or simply use this
+```
+带尾结点记录的单链表可以很好支持前/尾端加入和首端弹出元素]]></description></item><item><title>[Data Structure]线性表Linear List</title><link>http://www.cnblogs.com/HuisClos/archive/2019/02/12/10367344.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Tue, 12 Feb 2019 14:20:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2019/02/12/10367344.html</guid><description><![CDATA[# 线性表I 
+[TOC]
+
+## 计算机的基本内存结构
+内存是线性排列的一批存储单元，单元有唯一编号，称为单元地址       [内存 待续]
+单元地址从0开始址连续排列，可用地址是一个连续整数区间对内存单元的访问（存取其中的数据）都通过单元地址进行。
+因此， 要访问一个单元，必须先掌握其地址
+
+* 基于地址访问单元是 O(1) 操作，与单元位置或内存大小无关
+* 程序运行中构造、使用、处理的对象，都在这种线性结构里安排位置
+
+## 内存和对象存储
+程序运行中建立/存在的每个对象都要占用一块（或大或小的）内存
+
+* 建立的每个对象都有确定的唯一标识（例如内存位置），在其存续期间保持不变
+
+* 知道一个对象的位置就能访问（使用）它，已知位置访问相应对象的操作可以在常量时间完成
+
+如果一个组合对象包含一组元素，它们在一块元素存储区里连续存储， 每个元素的存储量相同，基于存储区位置和编号访问元素是 O(1) 操作 
+
+* 设对象的元素存储区的起始位置是 p，每个元素占用 a 个内存单元， 再假设第一个元素编号为 0 
+
+* 要访问编号为 k 的元素，其位置 loc 可以通过下式计算 loc = p + k * a
+
+* 显然，计算元素位置（及访问元素）所用时间与元素编号无关，也与组合对象的元素个数无关（连续存储可以 O(1) 时间访问）
+
+## 变量和对象
+程序里的变量（全局的、局部的，以及函数参数）有系统化的存储安排 方式，是另一套专门机制，下面讨论中不考虑。实际上： 
+* 变量也在内存安排位置，每个变量占用若干存储单元 
+* 程序运行中总能找到根据作用域可见的那些变量，取得或修改其值
+
+在 Python 里，可以
+* 通过初始化（或提供实参） 给变量（或函数参数）约 束一个值（对象）
+* 用赋值修改变量的约束值
+
+给变量约束一个值对象，就是 把该对象的标识（内存位置） 保存在变量里
+
+## 变量和值
+Python 里变量的值都是对象，可以是：  * 基本类型（如基本整数、浮点数等）的对象，大小固定且比较小 
+* 复杂的对象，例如 list 等，可能比较大（包含一组成分对象），需要的存储单元可能不同（不同的list有长有短），可能有复杂的内部结构（例如，其元素又可能是复杂的数据对象），等等 
+
+Python 程序运行时内部有一个专门的存储管理系统，负责管理程序可 用的内存，支持灵活有效的内存使用 
+* 程序中要求建立对象时，为这些对象安排存储 
+* 当某些对象不再有用时回收它们占用的存储 
+* 存储管理系统屏蔽了具体内存使用细节，减少编程人员的负担
+
+在写 Python 程序时，通常不需要关心存储管理的具体细节 
+* 但应注意，运行中存在的对象都需要存储，过多的对象有可能用完 所有可用存储，这种情况下程序只能崩溃
+
+
+## 对象创建和变量约束
+
+假设要给变量 s 赋值一个新字符串，系统需要： 
+* 找一块足够大的内存块，把字符串的内容复制进去 
+* 把内存块的地址信息存入变量
+
+这样做通常不够 
+* 内存单元里存储的都是二进制编码，仅从单元里存储的内容无法判断这一字符串到哪里结束 
+* 需要有一种安排（约定）。由于字符串可以有任意的长度，一种可能安排是在相应存储块的开始记录字符串长度。
+
+
+## “表示”及其设计 
+程序中生成和处理的对象都要以某种方式保存，因此要设计好它们的存储方式。这种方式及其效果称为该对象的“表示”（representation）。
+字符串的结构最简单，可以用一块连续存储区表示，类似的情况如数学 里的n维向量。但并非所有对象都如此 
+
+假设要表示一类对象，它有两个成员对象，都是字符串，一个表示作者 （作者名），一个表示图书标题（书名）
+书名和作者都可以用字符串表示，但两个字符串长度不定 
+作为整体的对象怎样表示，才能支持灵活方便的处理？ 
+ 一种做法是用三块内存：
+             变量保存二元结构的地址 
+             二元结构里存字符串地址 
+             这种结构称为链接结构， 用于表示复杂结构和联系
+
+
+## Python 的对象表示
+
+Python 系统的实现基于一套精心设计的链接结构 
+* 各种复杂对象，甚至 Python 程序等，都基于独立的存储块实现， 通过链接相互关联。
+* 各种数据对象的表示方式，对相关结构上各种操作的效率有着简单 性的影响，也间接影响着用 Python 做的程序
+
+* * *
+* * *
+
+## 线性表
+程序里经常需要将一组（某类型的）元素作为整体管理和使用 
+* 该组数据里元素个数可能变化（可以加入或删除元素） 
+* 有可能需要把这样一组元素看成一个序列，元素在序列里的位置和顺序可能表示实际应用中某种有意义的信息或关系 
+* 这样一组元素（的序列）的抽象就是线性表（简称表）。线性表是一种元素集合，其中还记录着元素间的一种顺序关系 
+
+线性表是最基本的一种数据结构 
+* 在程序里应用很广泛 
+* 还常作为更复杂的数据结构的实现基础
+* 例如整数的表，字符串的表，某种复杂结构的表等 
+* Python的list和tuple支持这类需要，可看作是线性表的实现
+
+## 概念和术语
+抽象讨论线性表时，考虑一个基本元素集合 E = {e0，…，eN-1}，其中的元素可能是某个类型的成员 
+表是元素的有穷序列，有 0 个或多个元素 (e0，e1,　…，en-1)，n≥0
+*  元素的位置称为其下标，下标从 0 开始编号（也可选择从 1 开始）
+*  表中元素的个数称为表的长度，长度为 0 的表是空表 
+*  元素间基本关系是下一个关系：这是一种顺序关系（线性关系） 
+
+线性表是一种线性结构。在一个非空线性表里： 
+* 存在唯一的“首元素",唯一的“尾元素"（末元素） 
+* 除首元素外，表中每个元素都有且只有一个前驱元素 
+* 除尾元素外，表中每个元素都有且只有一个后继元素
+
+可以把线性表作为数学对象建立抽象模型
+
+
+## 数据结构的操作
+作为一种包含元素（可以没有，也可以有许多）的数据结构，通常都需
+要提供一些“标准”操作，例如：
+*    创建和销毁这种数据结构（的实例）
+*    判断一个数据结构是否空（没有元素）。如果数据结构的容量有限制，还需判断它是否满（不能再加入新元素）
+*    向结构中加入元素或从中删除元素
+*    访问结构里的元素
+
+
+不同编程语言也可能影响需要实现的操作集合 
+例如，Python 能自动回收不用的对象，因此不需要销毁结构的操作 
+除上述共性操作外，具体数据结构还需要提供一些特殊操作。如：
+* 集合数据结构需要支持各种集合运算（求并集，交集等）
+* 图数据结构要提供判断结点是否相邻（两点间是否有边）的操作
+
+
+从作用看，数据结构的操作可以分为三类： 
+* 构造操作，它们构造出该数据结构的一个新实例 
+* 访问操作，它们从已有数据结构中提取某些信息，但不创建新结构， 也不修改被操作的结构 
+* 变动操作，它们修改已有的数据结构 
+
+从支持操作类型的角度看，数据结构可以分为两类：
+* 不变数据结构，只支持前两类操作，不支持变动操作。创建之后结 构和存储的元素信息都不改变，所有得到该类结构的操作都是创建 新的结构实例。例子如 Python 的 tuple 和 frozenset 
+* 变动数据结构，支持变动操作。在创建之后的存续期间，其结构和 所保存的信息都可能变化。例子如 Python 的 list, dict, set 
+
+实现数据结构时，可以根据需要考虑是实现为不变数据结构，还是实现为可变数据结构，所实现的结构提供哪些操作等
+
+
+## 线性表的操作
+假设为表数据结构取一个类型名 List。为简洁严格地表示操作的对象和结果，下面介绍一种数学表达形式，形式如下面描述： 
+    opname : T1 * T2 -> ResT
+    其中 opname 是操作名，T1 * T2 表示有两个参数，类型分别为 T1 和 T2，-> 之后的 ResT 表示操作的结果类型 
+    用 () 表示没有参数或者操作不返回任何结果 
+ 
+ 考虑一些有用的操作，应根据需要选取能说明操作意义的名字 
+ 
+ 表数据结构基本的创建和销毁，判断空和满的操作     newList : () -> List # 创建一个空表 
+    delList : List -> () # 销毁表 
+    emptyList : List -> bool # 表空？ 
+    fullList : List -> bool # 表满？
+    
+表元素加入操作，可考虑： 
+    prepend : List * Data -> List # 首端加入         append : List * Data -> List # 尾端加入         insert : List * int * Data -> List # 定位加入 # 要求将元素加入表中特定位置，原处该位及其后的元素后移 
+
+表元素删除操作，可以考虑： 
+    delFront : List -> List # 删除首元素 
+    delEnd : List -> List # 删除末元素 
+    delete : List * int -> List # 定位删除               delElem : List * Data -> List # 删除一个Data 
+    delAllElem : List * Data -> List # 删除所有 Data 
+
+定位元素访问，取得位于指定位置（下标）的元素： 
+    getElem : List * int -> Data
+
+
+## 表数据结构的实现模型
+
+实现表数据结构，主要考虑两方面的情况
+* 计算机内存的特点，以及保存元素和元素顺序信息的需要 
+* 重要操作的效率。其中使用最频繁的操作通常是：（定位）元素访问，元素加入，元素删除，元素遍历
+
+元素遍历就是依次访问表里的所有（或一批）元素
+*  操作效率与访问元素的个数有关
+*  遍历所有元素的操作，希望其复杂性不超过 O(n)
+
+加入/删除/访问元素的操作效率与表的实现结构有关
+
+基于各方面考虑，人们提出了两种基本实现模型
+* 将表元素顺序存放在的一大块连续的存储区里，这样实现的表也称 为顺序表（或连续表），元素顺序有自然的表示
+* 将表元素存放在通过链接构造起来的一系列存储块里
+
+## 顺序表模型
+顺序表的基本实现方式
+* 元素顺序存放在一片足够大的连续存储区里。表中首元素存入存储 区开始的位置，其余元素依次顺序存放
+* 通过元素在存储区里的“物理位置”表示元素之间的逻辑顺序关系 （隐式表示元素间的关系）
+
+一般情况是表元素所需存储量相同，因此顺序表中任一元素的位置都可 简单计算出来，存取操作可以在 O(1) 时间内完成
+
+元素e$_{i}$ 的地址计算公式（元素编号从 0 开始）： 
+Location(e$_{i}$) = Location(e$_{0}$) + c * i 
+其中 c = size_of(元素) ，是一个元素的存储量（元素大小）
+元素大小通常可以静态确定（如元素是整数，实数，或包含若干大小 确定的元素的复杂结构)
+
+
+## 顺序表的元素存储
+如果表中元素的大小有可能不同，只要略微改变顺序表的存储结构。仍能保证 O(1) 时间的元素访问操作
+顺序表的基本表示方式：
+![c5e0bdac1cc82607ec8317d11817b885.png](en-resource://database/2802:0)
+
+
+## 顺序表的元素存储
+如果表中要保存的元素的情况复杂，大小不一，或者还有复杂的内部结 构，可以采用链接方式，在表中保存元素链接（链接的大小相同）
+![d50003c722f48598b80bf76f98cda68a.png](en-resource://database/2804:0)
+
+## 顺序表
+基本表示方式确定后，还要进一步考虑表结构和操作的特点 
+* 表的一个重要性质是可以加入/删除元素 
+* 也就是说，在一个表存续期间，其长度可能变化
+
+问题：建立表时采用多大一块存储区？
+* 存储块一旦分配，就有了固定大小（确定的元素容量）
+* 按建立时确定的元素个数分配存储，适合创建不变表（如 tuple） 要考虑变动的表，就应该区分元素个数和存储区容量 
+
+合理的办法：分配足以容纳所需元素的存储块，可以有一些空位 
+* 表里的一般情况是存在着一些元素和一些可以存放元素的空位 
+* 应约定元素的存放方式，通常把元素连续放在存储区的前面一段 
+* 为保证正确操作，需要记录块大小和现有元素个数的信息
+
+
+## 顺序表：实现（布局）和操作
+易见：
+元素存储区的大小决定了表的容量 
+个数记录要与实际元素个数保持一致。 表元素变化时需要维护这一记录 
+元素个数等于容量表示这个表已满，再 加入元素就会失败（或考虑其他技术） 
+
+访问第 i 个元素时计算位置直接找到。复杂 性 O(1)（显然，只能在元素范围内访问） 
+
+空/满判断很容易实现：
+表空 iff 元素计数值等于 0 
+表满 iff 元素计数值等于容量 
+显然都是 O(1) 操作
+
+## 顺序表的操作
+创建空表是分配一块存储，记录容量并设置 元素计数值为 0，右图是个容量为 8 的空表 建立新表后应立即设置两个记录域（例如 max 和 n），保证表处于合法状态
+
+只要掌握着元素存储区开始位置（首元素的 位置），各种访问操作都很容易实现
+
+遍历操作： 
+* 只需在遍历过程中用一个整数变量记录 遍历达到的位置 
+* 通过存储区开始位置和上述变量的值， O(1) 时间可算出相应元素的位置 
+* 找下一元素的更新操作就是加一，找前 一元素的操作就是减一
+
+
+访问给定下标 i 的元素 
+* 需判断 i 值是否在表当时的合法元素范围内（0 ≤ i ≤ n-1） 
+* 不在范围内是非法访问，合法时从给定位置取得元素的值 
+
+查找给定元素 d 的（第一次出现的）位置    * 通过循环，将 d 与表里的元素逐个比较   * 通过下标变量控制循环，从 0 开始至大于表中元素个数时结束 
+* 找到元素时返回元素下标，找不到时返回一个特殊值（例如 –1）
+
+查找给定元素 d 在位置 k 之后的第一次出现的位置 
+* 与上面操作的实现方式类似 
+* 只是从 k+1 位置的元素开始比较（而不是从位置 0） 
+
+不修改表结构的操作都是这两种模式（直访，或按下标循环并检查）
+
+##  顺序表的操作（尾端操作）
+考虑加入和删除元素的操作。尾端加入和删除操作的 实现很简单，在其他位置加入删除的操作麻烦些
+
+尾端加入元素（O(1) 操作）
+* 检查表是否满，表满时操作失败 
+* 把新数据存入元素存储区的第 n 个单元 
+* 将元素计数变量 n 加一
+
+尾端删除元素（O(1) 操作）
+* 简单地把元素计数变量 n 减一
+
+首端加入和定位加入都比较麻烦，因为
+* 要保证元素在存储区前段连续存储 
+* 可能需要维持原有元素的顺序
+
+## 顺序表的操作（加入元素）
+首端/定位加入元素时需要移动已有元素，腾出要求存入元素的位置 假设要把 168 加在前面表里的位置 1
+
+* 不要求保持原有元素顺序， 把指定位置元素移到最后， 存入新元素（O(1)）
+* 要求保持原有元素顺序，必须逆序地 逐个下移后面元素，直至腾出指定位 置后将元素放入（O(n)）
+
+加入新元素后更新元素计数值
+
+
+## 顺序表的操作（删除）
+首端及定位元素删除都需要移动已有元素，保证所有元素连续存储
+
+* 如不需要保持原有元素顺序。可以直接用最后一个 元素覆盖指定位置的元素
+* 如果需要保持原有元素顺序位置，就 必须顺序地逐个将指定位置之后的所 有元素上移
+
+删除元素后更新元素计数值，最后的元素就看不到了
+
+
+## 顺序表的操作复杂性
+一些操作的复杂性是常量 O(1)。现在特别考虑定位加入和删除操作的 复杂性（首端加入删除是它们的特例）
+
+在 n 个元素的顺序表里下标 i 处加入元素，需要移动 n - i 个元素；删除下标为 i 的元素需要移动 n - i - 1个元素 
+   设在位置 i 加入和删除元素的概率分别是 p$_{i}$和p$_{i}\prime$
+   加入操作平均移动次数  $\displaystyle\sum_{i=0}^n$(n-i)p$_{i}$
+   删除操作平均移动次数$\displaystyle\sum_{i=0}^{n-1}$(n-i-1)p$_{i}\prime$
+   
+考虑平均复杂性时要考虑实例分布，依赖于实际情况 
+如果各种情况平均分布，要维持顺序，平均时间复杂性是 O(n) 
+最坏情况是首端加入/删除，要求维持顺序时复杂性也是 O(n)
+
+
+## 顺序表的操作复杂性
+访问操作
+ * 不需要扫描表的操作，复杂性都是 O(1)
+ * 扫描表内容操作复杂性 O(n)。如根据元素值检索，累计元素值等
+
+顺序实现（顺序表）总结
+优点：
+* O(1) 时间（随机，直接）按位置存取元素
+* 元素存储紧凑，除表元素存储外只需 O(1) 空间存放辅助信息
+缺点：
+* 需要连续的大块存储区存放表中的元素，可能有大量空闲单元
+* 加入删除操作时通常要移动许多元素
+* 需要考虑元素存储区的大小（有时事先很难估计）
+
+## 顺序表的实现
+顺序表的模型包括两部分内容
+* 一个元素存储区，存放表中的实际元素
+* 若干单元，存放一个表的全局信息（容量，表元素个数）
+
+
+一个数据结构应该具有一个对象的整体形态。对顺序表，就是要把这两 块信息组织关联起来。表的全局信息只需常量存储，存在两种组织方式
+
+
+一块存储连续存放这两部分信息
+![b774b6591fbe110e408c97f304155c75.png](en-resource://database/2806:0)
+
+
+用两块存储区，通过链接联系
+![ad15790b0f31f362de7f5d9db513ff28.png](en-resource://database/2808:0)
+
+## Python的list
+list 是一种线性结构，可看作线性表的一种实现。
+* 基于下标（位置）的元素访问和更新操作，复杂性为 O(1)
+* 允许任意加入元素（不会出现“表满”而无法加入新元素的情况）， 而且在不断加入元素的过程中，表对象标识（ id(...) 的值）不变
+
+
+list 实现的基本约束和解决方案
+* 要求 O(1) 的元素访问并维持元素的顺序，只能采用连续表技术， 元素保存在一块连续存储区
+* 要能容纳任意多元素，必须在元素个数将要超出存储区容量时换一 块更大存储区。要想在替换存储时 id 不变，只能采用分离式实现
+
+
+采用上述实现方法，自然的后果： 
+* 一般的元素加入/删除都需要 O(n) 时间，需要移动许多元素 
+* 如果要求加入元素时存储区已满，就需要换一块存储，把原有元素 拷贝过去（优化：可以在拷贝过程中完成元素加入）
+
+## list的逐步建立
+较大的 list，通常是通过不断加入元素逐步建立起来的
+* 加入一个元素，一般情况需要 O(n) 时间
+* 建立起 n 个元素的表，就需要 O(n$^2$) 时间
+
+最好的情况：尾端加入，不需要移动元素
+
+注意，不断在尾端加入元素的过程中可能出现两种情况
+* 如果存储区不满，O(1) 时间可以完成操作
+* 如果存储区满，就需要 O(n) 时间（换存储区，拷贝元素）
+* 最坏情况复杂性一定是 O(n)，但能否得到较好的平均时间？
+
+情况：如果高开销操作很少出现，平均操作代价可能比较低。考虑
+* 每次替换存储区增加 10 个空位，10 次加入才有一次高代价
+* 但注意，(1/10) O(n) = O(n)，平均复杂性的性质没变
+
+list 里元素越多（表越长），换一次存储区的代价也越高
+* 要想平均结果较好，随着表长度增加，换存储区的频度应降低
+* 一种可能做法：每次换存储区时，容量加倍
+
+计算：假设表的初始容量为 1，不断增长到长度为 220 ≈ 1,000,000
+* 加入操作共做了大约 10$^{6}$ 次
+* 替换存储时的元素拷贝：1 + 2 + 4 + 8 + ... + 2$^{19}$ ≈ 2$^{20}$
+* 总开销大约为 2 * 2$^{20}$，是 O(n) 的量级，平均 O(1)
+
+一次高开销操作后，保证有很多次低开销操作，称为“分期付款式”的常量复杂性（平摊式的复杂性）
+
+Python 的 list 采用这种设计，因此 lst.insert(len(lst), x) 比一般位置 加入的效率高，等价写法 lst.append(x)。如合适，应优先使用
+
+## list的操作
+Python list 的实际实现策略
+* 建立空 list 时分配可以容纳 8 个元素的存储区
+* 元素区满时加入：换一块 4 倍大的存储区；但在表已经比较大时就 会改变策略，换存储区时规模加倍
+* 效果：通过尾端加入元素，操作的平均复杂性是 O(1)
+
+
+其他操作的性质由连续表的实现方式确定
+* 所有序列的共性操作，复杂性由操作中需要考察的元素个数确定， 其中 len(.) 是 O(1) 操作
+* 元素访问和赋值，尾端加入和尾端（切片）删除是 O(1) 操作
+* 一般元素加入，切片替换，切片删除，表拼接（extend）等都是 O(n) 操作。pop 操作默认情况是尾端删除返回，为 O(1)，一般情 况（指定非尾端位置）为 O(n)
+
+Python 没提供检查一个 list 的当前存储块容量的操作
+
+
+## list 的几个特殊操作
+lst.clear() 应该是 O(1) 操作，具体实现情况未见说明。可能做法：
+* 简单将元素计数值设置为 0 
+* 换一块空表默认大小的存储区  
+
+lst.reverse() 修改 lst，将其元素倒置。很容易想到下面实现（放在 list 类里，假设元素存储区的域名为 elements），复杂性 O(n)
+def reverse(self) : 
+   el = self.elements 
+   i = 0 
+   j = len(el)-1 
+   while i < j : 
+       el[i], el[j] = el[j], el[i]
+       i, j = i+1, j-1
+
+list 的仅有特殊操作（方法）是sort，完成被操作表的元素排序。有关算法后面讨论。最好的排序算法复杂性是O(nlogn)
+
+* * *
+* * *
+
+从概念上说，抽象数据类型是一类数学对象（代数对象），我们可以为 一种具体的抽象数据类型建立形式化的数学理论
+
+表的数学理论基于（不说明的）元素集合和公共集合（如整数），包括
+* 定义集合（表的集合基于抽象的向量，或称序列）
+* 相关运算 
+     需命名
+     给定操作的签名（参数个数和类型，操作结果类型）
+     定义操作的效果
+ * 代数定律（公理） 
+      描述操作之间的关系
+      可以不定义操作的结果，只给出代数定律
+
+（抽象模型待续）]]></description></item><item><title>[Computation]有穷自动机</title><link>http://www.cnblogs.com/HuisClos/archive/2019/02/08/10355776.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Fri, 08 Feb 2019 07:18:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2019/02/08/10355776.html</guid><description><![CDATA[<p>&nbsp;有穷自动机</p>
+<hr />
+<p>&nbsp;</p>
+<pre><code><code>    *太简单辽，可以跳过*
+    有穷自动机：受到严格限制的实际计算机的模型
+     字符串被送入称作输入带的设备，带被划分成方格，每个方格写一个符号。机器的主要部分是一个带有内部结构的&ldquo;黑盒子&rdquo;（有穷控制器），在任一特定的时刻它处于有穷个不同的内部状态中的一个，通过可移动的读头能够了解输入带的任何位置上写着什么符号。开始时候，读头放在带的最左边的方格上，有穷控制器处于一个指定的初始状态。每隔一定时间有穷自动机从输入带上读一个符号，然后进入一个新的状态，与当前状态和刚读到的符号有关（确定型有穷自动机。）读一个符号后，读头在输入带上向右移一格，即下一步将读到的符号。最后读到输入串的结尾。有穷自动机通过它最后所处的状态表明批准与否，接受即结束在一个终结状态。
+     
+     确定型有穷自动机
+     非确定型有穷自动机：多个&ldquo;下一个状态&rdquo;
+     
+     
+     有穷自动机与正则表达式：并、连接、Kleene、补、交
+     （正则语言封闭）
+     
+     状态最小化
+</code></code></pre>
+<hr />
+<pre><code>有穷自动机的算法：
+
+   字符串匹配（写字符串时候一起写</code></pre>]]></description></item><item><title>[Computation]集合、关系、语言</title><link>http://www.cnblogs.com/HuisClos/archive/2019/02/08/10355765.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Thu, 07 Feb 2019 16:01:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2019/02/08/10355765.html</guid><description><![CDATA[<h1><span style="font-size: 14px;"><code>写了半天发现啥都没写</code></span></h1>
+<h1><span style="font-size: 14px;"><code>相当于自查表</code></span></h1>
+<hr />
+<p>&nbsp;</p>
+<h3><code>集合、关系和语言</code></h3>
+<h4><code>集合</code></h4>
+<pre><code><code>     *太简单辽，自己翻书*
+     集合：对象的汇集。
+     空集、单元集
+     子集、真子集
+     集合的运算：交 并 差 
+                    幂等律 交换律 结合律 分配律 吸收律 De Morgan律
+     幂集 划分
+     
+      *太简单辽，自己翻书*
+      笛卡儿积、二元关系
+      函数   满射 双射 自然同构
+      特殊二元关系：{自反 对称 传递} 等价
+                        {自反 反对称 传递} 偏序
+                        等价类
+      
+      三个基本的证明技术：数学归纳法、鸽巢原理、对角化原理
+      
+      对角化原理：对角线集合D对应主对角线上的方格序列的补，与每一行都不同
+</code></code></pre>
+<h4>语言</h4>
+<pre><code>     *太简单辽，自己翻书*
+     字母表
+     字符串 前缀 后缀
+     语言
+     语言的连接 正则表达式<br /><br /><br />都太简单辽。。。</code></pre>]]></description></item><item><title>[Algorithms]图的搜索</title><link>http://www.cnblogs.com/HuisClos/archive/2019/01/06/10231070.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Sun, 06 Jan 2019 15:46:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2019/01/06/10231070.html</guid><description><![CDATA[<p>未完待续</p>
+<hr />
+<p>&nbsp;</p>
+<p>知道图的存储，DFS,BFS</p>
+<p>&nbsp;二分图判定</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #008000;">//</span><span style="color: #008000;">二分图判定
+</span><span style="color: #008080;"> 2</span> <span style="color: #008000;">//</span><span style="color: #008000;">给定一个有n个顶点的图，给图上每个顶点染色，要使相邻顶点颜色不同，是否能用最多2种颜色染色?无重边和自环。
+</span><span style="color: #008080;"> 3</span> <span style="color: #008000;">//</span><span style="color: #008000;">只用两种颜色，确定一个顶点的颜色后，和它相邻的顶点的颜色随之确定的那个。
+</span><span style="color: #008080;"> 4</span> <span style="color: #008000;">//</span><span style="color: #008000;">选择任意一个顶点出发，依次确定相邻顶点的颜色，判断是否可被2种颜色染色，深度优先搜索
+</span><span style="color: #008080;"> 5</span> 
+<span style="color: #008080;"> 6</span> <span style="color: #008000;">//</span><span style="color: #008000;">输入</span>
+<span style="color: #008080;"> 7</span> vector&lt;<span style="color: #0000ff;">int</span>&gt; G[MAX_V];<span style="color: #008000;">//</span><span style="color: #008000;">图</span>
+<span style="color: #008080;"> 8</span> <span style="color: #0000ff;">int</span> V; <span style="color: #008000;">//</span><span style="color: #008000;">顶点数</span>
+<span style="color: #008080;"> 9</span> <span style="color: #0000ff;">int</span> color[MAX_V];<span style="color: #008000;">//</span><span style="color: #008000;">顶点i的颜色（1 or -1)
+</span><span style="color: #008080;">10</span> 
+<span style="color: #008080;">11</span> <span style="color: #008000;">//</span><span style="color: #008000;">把顶点染成1或-1</span>
+<span style="color: #008080;">12</span> <span style="color: #0000ff;">bool</span> dfs(<span style="color: #0000ff;">int</span> v,<span style="color: #0000ff;">int</span><span style="color: #000000;"> c){
+</span><span style="color: #008080;">13</span>     color[v] = c;<span style="color: #008000;">//</span><span style="color: #008000;">把顶点v染成颜色c</span>
+<span style="color: #008080;">14</span>     <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = <span style="color: #800080;">0</span>;i &lt; G[v].size();i++<span style="color: #000000;">){
+</span><span style="color: #008080;">15</span>         <span style="color: #008000;">//</span><span style="color: #008000;">如果相邻的顶点同色，则返回false</span>
+<span style="color: #008080;">16</span>         <span style="color: #0000ff;">if</span>(color[G[v][i]] ==<span style="color: #000000;"> c)
+</span><span style="color: #008080;">17</span>             <span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+</span><span style="color: #008080;">18</span>         <span style="color: #0000ff;">if</span>(color[G[v][i]]== <span style="color: #800080;">0</span> &amp;&amp; !dfs(G[v][i],-<span style="color: #000000;">c))
+</span><span style="color: #008080;">19</span>             <span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">21</span>     <span style="color: #008000;">//</span><span style="color: #008000;">如果所有顶点都染过色了，则返回true</span>
+<span style="color: #008080;">22</span>     <span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">}
+</span><span style="color: #008080;">24</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> solve(){
+</span><span style="color: #008080;">25</span>     <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i = <span style="color: #800080;">0</span>;i &lt; V;i++<span style="color: #000000;">){
+</span><span style="color: #008080;">26</span>         <span style="color: #0000ff;">if</span>(color[i] == <span style="color: #800080;">0</span><span style="color: #000000;">){
+</span><span style="color: #008080;">27</span>             <span style="color: #008000;">//</span><span style="color: #008000;">如果顶点i还没被染色，则染成1</span>
+<span style="color: #008080;">28</span>             <span style="color: #0000ff;">if</span>(!dfs(i,<span style="color: #800080;">1</span><span style="color: #000000;">)){
+</span><span style="color: #008080;">29</span>                 printf(<span style="color: #800000;">"</span><span style="color: #800000;">No\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #008080;">30</span>                 <span style="color: #0000ff;">return</span><span style="color: #000000;">;
+</span><span style="color: #008080;">31</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">33</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">34</span>     printf(<span style="color: #800000;">"</span><span style="color: #800000;">Yes\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #008080;">35</span> }</pre>
+</div>
+<p>DFS也可求图的拓扑序。</p>]]></description></item><item><title>[Operating System]</title><link>http://www.cnblogs.com/HuisClos/archive/2018/05/23/9078658.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Wed, 23 May 2018 10:37:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/05/23/9078658.html</guid><description><![CDATA[<p>ch1</p>
+<hr />
+<p>&nbsp;</p>]]></description></item><item><title>[Matlab][Digital Processing]基本语法</title><link>http://www.cnblogs.com/HuisClos/archive/2018/05/23/9078642.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Wed, 23 May 2018 10:31:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/05/23/9078642.html</guid><description><![CDATA[<p>抄书。</p>
+<hr />
+<p>&nbsp;1、注释：%</p>
+<p>2、数据类型：</p>
+<p>&nbsp; &nbsp; ①数值：(u)int8,(u)int16,(u)int32,(u)int64,float,double，复数（虚部i），默认数据类型是double；char是6位，schar是8位，bitN指定任意N位带符号整数</p>
+<p>&nbsp; &nbsp; ②逻辑类型：True和False，使用logical函数实现强制类型转换；</p>
+<p>&nbsp; &nbsp; ③字符串：字面值通过单引号识别，注意所有字符都是Unicode的；</p>
+<p>&nbsp; &nbsp; ④数组：（Matlab特色）<span style="text-decoration: underline;">数组是基本数据单元，标量被看作一行一列的数组</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;多维矩阵下标用(1,2)表示，可以使用类似python的切片，用':'代替所在维数的全部；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;End表示该维最大下标；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;可以直接通过赋值来扩展数组的大小。</p>
+<p>&nbsp; &nbsp; ⑤比较运算符：同C（复数的比较只比较实部）。</p>
+<p>3、矩阵：普通矩阵</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 稀疏矩阵：</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;稀疏化：sparse；逆操作：full；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;稀疏矩阵有很多对应普通矩阵的创建函数，如speye,sprand,sprandn；有些函数是专对稀疏矩阵的，包括nnz, nonzeros等</p>
+<p>4、单元阵列（胞元），特殊数组，每个元素都是指向其他数据结构的指针。</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;用{}表示解引用该下标对应的元素。创建：直接赋值a{1,1}=&hellip;，或者用cell先创建，然后再赋值；显示：用celldisp；绘图：用cellplot；删除元素：用clear或者赋予空值；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 常用单元阵列存放字符串（可以用cellstr转换二维字符数组）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 实现可变参数类型：参数名是varargin，这样输入的参数都转化为单元阵列varargin中的元素；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 返回不定个数的结果，类似，用varargout；</p>
+<p>5、名称搜索路径：①当前环境的变量：whos</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;②内置函数：库函数</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;③当前目录的.M文件</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;④设置的其他搜索路径：在File-Set Path中添加</p>
+<p>6、转换函数：num2str、str2num；sscanf；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;其他的类似C中强制类型转换的格式：double(str)；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 进制转换：hex2num,hex2dec等</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 二维字符数组，用char('','')，或者strvcat在竖直方向进行添加；</p>
+<p>7、字符串操作函数：基本和C中函数名字一致，但是添加了很多功能，如str(n)cmp(i)（只能比较相等&hellip;）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 判断格式（同ctype.h中的函数，isalpha变成了isletter）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; findstr(一维),strmatch(二维，返回行数),strrep；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strtok（返回tuple，左边是分隔符左边，右边是剩下的）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; upper,lower；</p>
+<p>8、结构数组：用关键字struct创建或者直接赋值(如a.x=&hellip;，自动推断)。</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A=struct('field1',var1,'field2',val2,&hellip;)或者直接用字符串数组或单元阵列指定结构域名。删除域：rmfield；访问域：getfield和setfield（直接用'.'亦可）；</p>
+<p>9、变量：长度不超过31，大小写敏感可以通过casesen on/off切换，</p>
+<p>10、特殊变量：有些常用的常量被集成到matlab中，包括pi,I,j(虚数),Inf,NaN,clock,date,eps(精度),ans（上一个结果），有些可以看作函数。注意不要覆盖这些函数。</p>
+<p>11、运算符：逻辑&mdash;与C类似，xor（异或）除外，^表示幂次；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;关系&mdash;与C类似，不等于用~=表示；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;算术&mdash;左除(\)和右除(/)分别将左边或右边求逆然后相乘；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;在所有运算符前面加上.表示的不再是矩阵的运算法则，而是对应元素的计算；[]：构造数组；()：多种含义，可装载下标；续行：&hellip;</p>
+<p>12、内存顺序：列主序，在使用单下标时非常重要。</p>
+<p>13、显示输出：默认是小数点后4位，改变格式要用format命令，如format short等；或者使用disp函数；或者使用fprintf函数，格式与C语言printf类似</p>
+<p>14、数据文件：最简单的是save和load，后缀用.dat，参数可以是-ascii(方便共享)</p>
+<p>15、内建函数：数值类的代数函数基本都有，包括max、min、三角函数、sqrt、mod；取整的ceil、fix和round</p>
+<p>16、画图，plot指定坐标轴、颜色、标记类型、线形、线宽，格式是plot(x,y,'PropertyName',value)这种；title指定标题、xlabel等指定坐标轴的名称，grid on打开网格；图例用legend；打印图像用print；axis控制坐标轴范围；hold on/off在同一坐标轴画图；figure n，选择当前图像；gcf返回当前图像数；在一个窗口画图：subplot(m,n,p)，p要从上到下从左到右数；字体修改用stream modifier；极坐标：polar；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 其他图：stair(s)(阶梯型), bar(条形图), barh(垂直的条形图), compass(极坐标图), pie(饼状图)，hist(直方图)，stem(针头图)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 三维作图：plot3；mesh(网格)；surf(表面)；等高线(contour)，用meshgrid辅助确定范围</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 直接作图（无需中间数组）：ezplot,fplot；后者甚至支持tex命令</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 其他坐标空间：semilog的x用对数，y轴用线形；semiloge相反；loglog两个轴都是对数</p>
+<p>17、 逻辑类：ischar, isempty, isinf, isnan, isnumeric等</p>
+<p>18、语句：选择&mdash;&mdash;if xxx elseif xxx else xxx end，这里的格式有点类似python，不必用括号，但是以断行分，缩进不是必须的；switch，通C语言，但是不需要break断流，可以用case{1,2}来合并相同的情况，关键字otherwise表示其他，case后面用逗号。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;异常（错误）&mdash;&mdash;try&hellip;catch&hellip;注意这里不是面向对象，所以也没啥异常类，这个东西比较鸡肋，错误的话就直接跳出到catch模块了。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;循环&mdash;&mdash;while&hellip;end；for i=1:2:10&hellip;end，虽然不如Python的in关键字那么简洁，也比较方便。Break、continue的用法通C</p>
+<p>19、调试：F5:执行到断点，F10：逐行调试</p>
+<p>20、逻辑数组：直接判断数组与常量的大小比较，生成的数组只有1和0，也就是逻辑数组；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;可以通过"对应"来简化运算。从而快速筛选所需元素。</p>
+<p>21、函数：每个函数对应一个M文件，格式为function[out1,out2&hellip;]=fname(in1,in2&hellip;)，返回值：直接令函数名=一个值即可；变量按值传递（准确来说是写时复制）。实参的个数和形参可以不等（但是不能用缺省实参），这种情况必须在程序中检查（比缺省实参略麻烦，但是更灵活，使用nargin, nargchk, inputname等函数）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;通过全局变量共享数据，声明方式是global；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;持久（静态）数据用persistent关键字声明。</p>
+<p>&nbsp; &nbsp; &nbsp; 函数的函数：数学的概念，通过调用函数对另外的函数的某个属性（如：极值），进行计算（和FP中的高阶函数有雷同的地方）。</p>
+<p>&nbsp; &nbsp; &nbsp;子函数（中间函数）：在一个M文件中声明多个函数，除去最上面一个外都是子函数。子函数只能在所在M文件中可见。</p>
+<p>&nbsp; &nbsp; &nbsp;私有函数：以private命名的子目录中的函数，只有在其父目录中是可见的。</p>
+<p>&nbsp; &nbsp; &nbsp;错误：error('msg')，msg为空数组不输出，警告用warning('msg')</p>
+<p>&nbsp; &nbsp; &nbsp;随机数：rand和randn</p>
+<p>&nbsp; &nbsp; 直接执行字符串：eval（类似java）</p>
+<p>&nbsp; &nbsp; 查找函数：lookfor，有类似python的注释结构</p>
+<p>&nbsp; &nbsp; I/O函数：textread:逐行读取并解析（格式化），适用于以行为分隔的有序数据；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;matlab使用文件标识（类似于句柄或linux 的文件标示符）来确定文件，函数名和C类似，多出fgetl（按行读取，忽略换行符）和fgets（不忽略换行符），文件默认打开方式是二进制。fclose('all')会关闭所有文件；fprintf也可输出到文件；fscanf可以从文件中读取格式化数据；确定文件的存在性：exist；输出IO相关的错误信息：ferror；文件末尾判定：feof；uiimport：通过UI导入或直接导入剪贴板的程序；</p>
+<p>22、图形：图像对象以句柄标识，每个图形包括uimenu（目录）、uicontrol（控件）、坐标系和uicontextmenus（右键）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;gca返回当前坐标系句柄，gco返回当前选择对象句柄，一般习惯在存储句柄的变量名后面加上H；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 更改对象属性：get、set，指定属性名即可，也可以使用属性编辑器完成这一过程（propedit，对于最终用户），除了标准属性外，用户也可添加任意数量的自定义属性数据到文件中（用函数setappdata和getappdata）。</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;查找属性值匹配的任意对象：findobj（比较慢）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;暂停等待：waitforbuttonpress；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;图像的位置：查找position属性，坐标系是标准坐标系的格式（坐下原点）；</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;修改默认属性，属性名前面加上Default，修改父对象的默认属性后子对象的对应属性也会改变。</p>
+<p>23、GUI：matlab支持基本的GUI创建，方便做出一些比较简单的框架。用guide设计，然后再自动生成的M文件中添加或修改相应函数即可。</p>
+<p>&nbsp;</p>]]></description></item><item><title>[English Learning]Reading</title><link>http://www.cnblogs.com/HuisClos/archive/2018/04/11/8799385.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Wed, 11 Apr 2018 15:26:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/04/11/8799385.html</guid><description><![CDATA[<p>Left&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+<p>Overview:</p>
+<ul>
+<li>Time</li>
+<li>&nbsp;Reading Question Type</li>
+</ul>
+<hr /><ol>
+<li>Time:20 min/passage(Toefl ibt)</li>
+<li>Reading Question Type: <strong>10</strong> different <strong>types of reading questions</strong>,divide into<strong> three broad categories</strong></li>
+</ol>
+<ul>
+<li><em>Basic Information Skills Questions</em></li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>&nbsp;"In the first/second/third paragraph..."</strong>the answer is always stated or strongly implied in the passage,usually in more than a sentence or two.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;include<span style="text-decoration: underline;"> factual information questions, negative factual information questions, vocabulary questions, and reference questions</span></p>
+<ul>
+<li><em>Inference Skills Questions</em></li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;use the information in the passage to answer questions that aren't directly addressed in the passage.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;①<strong>imply a change over time, then ask you about the nature of that change</strong></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;②<strong>deal with the author&rsquo;s implied intentions or opinions and vocabulary items that aren&rsquo;t defined, but whose meanings are implied in the passage.</strong></p>
+<ul>
+<li><em>Reading to Learn Questions</em></li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>add new information</strong> to an existing part of a passage, <strong>summarize the passage</strong>, or <strong>group statements in a new way</strong>.</p>
+<p><em>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</em></p>
+<p>&nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp;</p>]]></description></item><item><title>【数学分析】第一章 数列极限</title><link>http://www.cnblogs.com/HuisClos/archive/2018/04/08/8745492.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Sun, 08 Apr 2018 08:00:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/04/08/8745492.html</guid><description><![CDATA[<p><strong>Keypoint:</strong></p>
+<p><strong>1、数列极限的定义</strong></p>
+<p><strong>2、用对偶法则正面叙述数列发散的定义，以及，数列不收敛于给定的数a</strong></p>
+<p><strong>3、适当放大法</strong></p>
+<p><strong>4、对于常见的几个无穷大量的&ldquo;级别&rdquo;要有感觉</strong></p>
+<p><strong>5、Cauchy命题</strong></p>
+<p><strong>6、</strong></p>
+<p>&nbsp;</p>
+<p>1.1 数列的基本概念</p>
+<p>1.2 收敛数列的基本性质</p>
+<p>1.3 单调数列</p>
+<p>1.4 Cauchy命题与Stolz定理</p>
+<p>1.5&nbsp;自然对数的底和Euler常数</p>
+<p>1.6 由迭代生成的数列</p>
+<hr />
+<p>&nbsp;</p>]]></description></item><item><title>[Algorithm]Recurrent Problems_Josephus problem</title><link>http://www.cnblogs.com/HuisClos/archive/2018/04/08/8438960.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Sun, 08 Apr 2018 07:22:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/04/08/8438960.html</guid><description><![CDATA[<p>&nbsp;</p>
+<p>n people (numbered 1 to n) around a circle,eliminate every second remaining person until only one survives.</p>
+<p>The problem &mdash; given the number of people, starting point, direction, and number to be skipped &mdash; is to choose the position in the initial circle to avoid execution.</p>
+<p><strong>Solution:</strong></p>
+<p>In the following,&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;denotes the number of people in the initial circle, and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />&nbsp;denotes the count for each step, that is,&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21363ebd7038c93aae93127e7d910fc1b2e2c745" alt="k-1" />&nbsp;people are skipped and the&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />-th is executed. </span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">The people in the circle are numbered from&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92d98b82a3778f043108d4e20960a9193df57cbf" alt="1" />&nbsp;to&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h3><span id="k.3D2"><span id="k=2" class="mw-headline">k=2<span class="mw-editsection"><span class="mw-editsection-bracket"><span class="mw-editsection-bracket"><br /></span></span></span></span></span></h3>
+<p>We explicitly solve the problem when every second person will be killed, i.e.&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0bd301789e1f25a3da4be297ff637754ebee5f5d" alt="k=2" />. (For the more general case&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/954372c73b10ed948c8ed9e269aaa91a751461a3" alt="k\neq 2" />, we outline a solution below.) We express the solution recursively.</span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> Let&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;denote the position of the survivor when there are initially&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;people (and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0bd301789e1f25a3da4be297ff637754ebee5f5d" alt="k=2" />). </span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">The first time around the circle, all of the even-numbered people die.</span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> The second time around the circle, the new 2nd person dies, then the new 4th person, etc.;</span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> it's as though there were no first time around the circle.</span></span></span></span></span></span></span></span></span></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>If the initial number of people was even, then the person in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87f9e315fd7e2ba406057a97300593c4802b53e4" alt="x" />&nbsp;during the second time around the circle was originally in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/75fc96485e02202cc2de34a26fe67d497bc51326" alt="2x-1" />&nbsp;(for every choice of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87f9e315fd7e2ba406057a97300593c4802b53e4" alt="x" />). </span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Let&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/609cba968b5f800b42926aa24dc3e7230e64fd22" alt="n=2j" />. The person at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92b7258a4eb6e431a851bf33bd3b8afd07094a8f" alt="f(j)" />&nbsp;who will now survive was originally in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4b738504e6ba81a1f58af006ccbd5a423403c987" alt="2f(j)-1" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">This gives us the recurrence</span></span></span></span></span></span></span></span></span></span></span></span><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8beba84c2681cd7b102ec47a37bd7fda3c53e2a8" alt="f(2j)=2f(j)-1\;." /></p>
+<p>&nbsp;</p>
+<p>If the initial number of people was odd, then we think of person 1 as dying at the end of the first time around the circle. </p>
+<p>Again, during the second time around the circle, the new 2nd person dies, then the new 4th person, etc. In this case, the person in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87f9e315fd7e2ba406057a97300593c4802b53e4" alt="x" />&nbsp;was originally in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ec86c7ed988e98a84b2b33e07f0737a421bfba07" alt="2x+1" />. </span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">This gives us the recurrence</span></span></span></span><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c5fd4b4dadeaee48b56cf03c9d84df8e71592bd9" alt="f(2j+1)=2f(j)+1\;." /></p>
+<p>When we tabulate the values of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;we see a pattern:</span></span></span></span></p>
+<table>
+<tbody>
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" /></span></span></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+
+</tr>
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" /></span></span></td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>7</td>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>7</td>
+<td>9</td>
+<td>11</td>
+<td>13</td>
+<td>15</td>
+<td>1</td>
+
+</tr>
+
+</tbody>
+
+</table>
+<p>This suggests that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;is an increasing odd sequence that restarts with&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b18729f39cdba4b90c6c24c34cf558e826d0d1f6" alt="f(n)=1" />&nbsp;whenever the index&nbsp;<em>n</em>&nbsp;is a power of 2. </span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Therefore, if we choose&nbsp;<em>m</em>&nbsp;and&nbsp;<em>l</em>&nbsp;so that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b65df22179bdf0e35598d93bd6703a32c03100d8" alt="n=2^{m}+l" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5189a60581e81a21347624a6b5ab932a9e59e4c" alt="0\leq l&lt;2^{m}" />, then&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/42b018500733a6766ccf20d3ed652ae6336b73e1" alt="f(n)=2\cdot l+1" />. </span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">It is clear that values in the table satisfy this equation. Or we can think that after&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/829091f745070b9eb97a80244129025440a1cfac" alt="l" />&nbsp;people are dead there are only&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/667d0154f26e56e3f7979803f08afac16b4dcb16" alt="2^{m}" />&nbsp;people and we go to the&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ad6cc29a87d7b25ec1f294612477d5a38f59c09a" alt="2l+1" />th person. </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">He must be the survivor. So&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd6d4a1f2b5a1513ce9ab10163bf23fc51d948ce" alt="f(n)=2l+1" />. Below, we give a proof by induction.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><strong>Theorem:</strong>&nbsp;If&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b65df22179bdf0e35598d93bd6703a32c03100d8" alt="n=2^{m}+l" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5189a60581e81a21347624a6b5ab932a9e59e4c" alt="0\leq l&lt;2^{m}" />, then&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd6d4a1f2b5a1513ce9ab10163bf23fc51d948ce" alt="f(n)=2l+1" />.</span></span></span></span></span></span></p>
+<p><strong>Proof:</strong>&nbsp;We use&nbsp;strong induction&nbsp;on&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />. </span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The base case&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d9ec7e1edc2e6d98f5aec2a39ae5f1c99d1e1425" alt="n=1" />&nbsp;is true. </span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We consider separately the cases when&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is even and when&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is odd.</span></span></span></span></span></span></span></span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is even, then choose&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/29b25eeca673386d676f79dce674fe93040693eb" alt="l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/31aafa60e48d39ccce922404c0b80340b2cc777a" alt="m_{1}" />&nbsp;such that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2fd6343010fb386af17a62856fd112676a3f7aa1" alt="n/2=2^{{m_{1}}}+l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cae73db595a655f9cc9f0b5b9652efff28a5d116" alt="0\leq l_{1}&lt;2^{{m_{1}}}" />.</span></span></span></span></span></span></span></span></span></span><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Note that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/069aa97d0fcecc250f0ac344c3ffc01c9c4d7054" alt="l_{1}=l/2" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We have&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6639ae83b9b9f50201326c0ff41ee1ef340325e5" alt="f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1" />, where the second equality follows from the induction hypothesis.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;is odd, then choose&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/29b25eeca673386d676f79dce674fe93040693eb" alt="l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/31aafa60e48d39ccce922404c0b80340b2cc777a" alt="m_{1}" />&nbsp;such that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8ba574aedbde4c8bec87cce8a667eeedb84f7c58" alt="(n-1)/2=2^{{m_{1}}}+l_{1}" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cae73db595a655f9cc9f0b5b9652efff28a5d116" alt="0\leq l_{1}&lt;2^{{m_{1}}}" />. Note that&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b3f92739fc3811f2524009abb54af4a1b4a1ee1f" alt="l_{1}=(l-1)/2" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We have&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/405c97bca01969df4cefd7d3e926921433723f59" alt="f(n)=2f((n-1)/2)+1=2((2l_{1})+1)+1=2l+1" />, where the second equality follows from the induction hypothesis.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This completes the proof.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We can solve for&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/829091f745070b9eb97a80244129025440a1cfac" alt="l" />&nbsp;to get an explicit expression for&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />:</span></span></span></span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fd4a1f796181ff160f2a353cb6d4aaa3edaa767f" alt="f(n)=2(n-2^{{\lfloor \log _{2}(n)\rfloor }})+1" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The most elegant form of the answer involves the binary representation of size&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />:&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />&nbsp;can be obtained by a one-bit left cyclic shift of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;itself.</span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If we represent&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;in binary as&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a2f9a95ba4886d271a1f6399488c2c0ff5dc24c6" alt="n=1b_{1}b_{2}b_{3}\dots b_{m}" />, then the solution is given by&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4bb117e6b3b80085a898004914ebb6fdb4c2174b" alt="f(n)=b_{1}b_{2}b_{3}\dots b_{m}1" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The proof of this follows from the representation of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;as&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5d47762830148c6b6f105d00392799cdf85b82f" alt="2^{m}+l" />&nbsp;or from the above expression for&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" alt="f(n)" />.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>&nbsp;</p>
+<p><strong>Implementation: </strong></p>
+<p><strong>I</strong>f n denotes the number of people, the safe position is given by the function&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd6d4a1f2b5a1513ce9ab10163bf23fc51d948ce" alt="f(n)=2l+1" />&nbsp;,where&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b65df22179bdf0e35598d93bd6703a32c03100d8" alt="n=2^{m}+l" />&nbsp;and&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5189a60581e81a21347624a6b5ab932a9e59e4c" alt="0\leq l&lt;2^{m}" />.</span></span></span></span></span></span></p>
+<p>Now if we represent the number in binary format, the first bit denotes&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/667d0154f26e56e3f7979803f08afac16b4dcb16" alt="2^{m}" />&nbsp;and remaining bits will denote&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/829091f745070b9eb97a80244129025440a1cfac" alt="l" />.</span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> For example, when n=41, its binary representation is</span></span></span></span></p>
+<p><strong>n = 1 0 1 0 0 1</strong></p>
+<p><strong>2<sup>m</sup>&nbsp;= 1 0 0 0 0 0</strong></p>
+<p><strong>l = 0 1 0 0 1</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">/*</span><span style="color: #008000;">*
+     * 
+     * @param n the number of people standing in the circle
+     * @return the safe position who will survive the execution 
+     *   f(N) = 2L + 1 where N =2^M + L and 0 &lt;= L &lt; 2^M
+     </span><span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">int</span> getSafePosition(<span style="color: #0000ff;">int</span><span style="color: #000000;"> n) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> find value of L for the equation</span>
+        <span style="color: #0000ff;">int</span> valueOfL = n -<span style="color: #000000;"> Integer.highestOneBit(n);
+        </span><span style="color: #0000ff;">int</span> safePosition = <span style="color: #800080;">2</span> * valueOfL  + <span style="color: #800080;">1</span><span style="color: #000000;">;
+        
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> safePosition;
+    }</span></pre>
+</div>
+<p><strong>&nbsp;</strong></p>
+<h3><span id="The_general_case" class="mw-headline">The general case:</span></h3>
+<p>The easiest way to solve this problem in the general case is to use&nbsp;<span style="text-decoration: underline;">dynamic programming</span>&nbsp;by performing the first step and then using the solution of the remaining problem. When the index starts from one, then the person at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/01d131dfd7673938b947072a13a9744fe997e632" alt="s" />&nbsp;shifts from the first person is in position&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/633e3382ad17eca58f0eed77d0c9ad8f87bdede5" alt="((s-1){\bmod  n})+1" />, where n is the total number of persons. </span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">Let&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4ef1a721a08c16f494961f88532814d3939ada4c" alt="f(n,k)" />&nbsp;denote the position of the survivor. After the&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />-th person is killed, we're left with a circle of&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fbd0b0f32b28f51962943ee9ede4fb34198a2521" alt="n-1" />, and we start the next count with the person whose number in the original problem was&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e7a87a95aa5ff9bf82bbf491d05de0be8ce065b1" alt="(k{\bmod  n})+1" />. </span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">The position of the survivor in the remaining circle would be<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1ff53206537da68d34dfade29810c342452a4691" alt="f(n-1,k)" />&nbsp;if we start counting at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92d98b82a3778f043108d4e20960a9193df57cbf" alt="1" />; </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">shifting this to account for the fact that we're starting at&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e7a87a95aa5ff9bf82bbf491d05de0be8ce065b1" alt="(k{\bmod  n})+1" />&nbsp;yields the recurrence</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9e4ae914bf1305a14f2134cb6b5ec007372671d3" alt="f(n,k)=((f(n-1,k)+k-1){\bmod  n})+1,{\text{ with }}f(1,k)=1\,," /></span></span></dd></dl>
+<p>which takes the simpler form</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/466bf5dce42cbb797e62f6209d6e638dbe17aa63" alt="g(n,k)=(g(n-1,k)+k){\bmod  n},{\text{ with }}g(1,k)=0" /></span></span></dd></dl>
+<p>if we number the positions from&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2aae8864a3c1fec9585261791a809ddec1489950" alt="{\displaystyle 0}" />&nbsp;to&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fbd0b0f32b28f51962943ee9ede4fb34198a2521" alt="n-1" />&nbsp;instead.</span></span></span></span></p>
+<p>This approach has&nbsp;running time&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/34109fe397fdcff370079185bfdb65826cb5565a" alt="O(n)" />, but for small&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" alt="k" />&nbsp;and large&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n" />&nbsp;there is another approach.</span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"> The second approach also uses dynamic programming but has running time&nbsp;<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5dcf3e2dc7b376b4d26d7574a5dced51ca5909df" alt="O(k\log n)" />. </span></span></span></span></span></span></span></span></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y">It is based on considering killing&nbsp;<em>k</em>-th, 2<em>k</em>-th, ...,<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7bab96b09df2f168bfb8172e74be39f69ea65119" alt="(\lfloor n/k\rfloor k)" />-th people as one step, then changing the numbering.<sup class="noprint Inline-Template Template-Fact"><br /></sup></span></span></span></span></span></span></span></span></span></span></p>
+<p>This improved approach takes the form</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"><img class="mwe-math-fallback-image-inline" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/84e40e8e90bcd203df63c92c868dd2ef16d7d99b" alt="{\displaystyle g(n,k)={\begin{cases}0&amp;{\text{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&amp;{\text{if }}1&lt;n&lt;k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\text{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &amp;{\text{if }}k\leq n\\\end{cases}}}" /></span></span></dd></dl>]]></description></item><item><title>[Algorithms]Greedy</title><link>http://www.cnblogs.com/HuisClos/archive/2018/04/08/8698428.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Sun, 08 Apr 2018 07:07:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/04/08/8698428.html</guid><description><![CDATA[<p>Left to be&nbsp;ameliorated.</p>
+<hr />
+<p>&nbsp;an algorithmic paradigm that follows the problem solving heuristic of making the locally optimal choice at each stage with the hope of finding a global optimum</p>
+<p>&nbsp;</p>
+<p>In mathematical optimization,greedy algorithms solve combinatorial problems having the properties of materials.</p>
+<p><strong>Specifies:</strong></p>
+<p>In general, greedy algorithms have five components:</p>
+<ol>
+<li>A candidate set, from which a solution is created</li>
+<li>A selection function, which chooses the best candidate to be added to the solution</li>
+<li>A feasibility function, that is used to determine if a candidate can be used to contribute to a solution</li>
+<li>An objective function, which assigns a value to a solution, or a partial solution, and</li>
+<li>A solution function, which will indicate when we have discovered a complete solution</li>
+</ol>
+<p><strong>Greedy choice property:</strong></p>
+<p>We can make whatever choice seems best at the moment and then solve the subproblems that arise later. The choice made by a greedy algorithm may depend on choices made so far, but not on future choices or all the solutions to the subproblem. It iteratively makes one greedy choice after another, reducing each given problem into a smaller one. In other words, a greedy algorithm never reconsiders its choices. This is the main difference from dynamic programming, which is exhaustive and is guaranteed to find the solution. After every stage, dynamic programming makes decisions based on all the decisions made in the previous stage, and may reconsider the previous stage's algorithmic path to solution.</p>
+<p><strong>Applications:</strong></p>
+<p>Greedy algorithms mostly (but not always) fail to find the globally optimal solution, because they usually do not operate exhaustively on all the data. They can make commitments to certain choices too early which prevent them from finding the best overall solution later. For example, all known greedy coloring&nbsp;algorithms for the graph coloring problem and all other NP-complete&nbsp;problems do not consistently find optimum solutions. Nevertheless, they are useful because they are quick to think up and often give good approximations to the optimum.</p>
+<p>If a greedy algorithm can be proven to yield the global optimum for a given problem class, it typically becomes the method of choice because it is faster than other optimization methods like&nbsp;dynamic programming. Examples of such greedy algorithms are&nbsp;Kruskal's algorithm&nbsp;and&nbsp;Prim's algorithm&nbsp;for finding&nbsp;minimum spanning trees, and the algorithm for finding optimum&nbsp;Huffman trees.</p>
+<p>The theory of&nbsp;matroids, and the more general theory of&nbsp;greedoids, provide whole classes of such algorithms.</p>
+<p>Greedy algorithms appear in network&nbsp;routing&nbsp;as well. Using greedy routing, a message is forwarded to the neighboring node which is "closest" to the destination. The notion of a node's location (and hence "closeness") may be determined by its physical location, as in&nbsp;geographic routingused by&nbsp;ad hoc networks. Location may also be an entirely artificial construct as in&nbsp;small world routing&nbsp;and&nbsp;distributed hash table.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>The&nbsp;activity selection problem&nbsp;is characteristic to this class of problems, where the goal is to pick the maximum number of activities that do not clash with each other.</li>
+<li>In the&nbsp;Macintosh computer&nbsp;game&nbsp;<em>Crystal Quest</em>&nbsp;the objective is to collect crystals, in a fashion similar to the&nbsp;travelling salesman problem. The game has a demo mode, where the game uses a greedy algorithm to go to every crystal. The&nbsp;artificial intelligence&nbsp;does not account for obstacles, so the demo mode often ends quickly.</li>
+<li>The&nbsp;matching pursuit&nbsp;is an example of greedy algorithm applied on signal approximation.</li>
+<li>A greedy algorithm finds the optimal solution to&nbsp;Malfatti's problem&nbsp;of finding three disjoint circles within a given triangle that maximize the total area of the circles; it is conjectured that the same greedy algorithm is optimal for any number of circles.</li>
+<li>A greedy algorithm is used to construct a Huffman tree during&nbsp;Huffman coding&nbsp;where it finds an optimal solution.</li>
+<li>In&nbsp;decision tree learning, greedy algorithms are commonly used, however they are not guaranteed to find the optimal solution.</li>
+</ul>
+<p>&nbsp;</p>]]></description></item><item><title>[Operating System]Thread Pool</title><link>http://www.cnblogs.com/HuisClos/archive/2018/04/02/8697977.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Mon, 02 Apr 2018 13:51:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/04/02/8697977.html</guid><description><![CDATA[What is Thread Pool:
+     a software design pattern for achieving concurrency of execution in a computer program
+
+It is also called:
+     a replicated workers/worker-crew model
+
+A thread pool maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program. By maintaining a pool of threads, the model increases performance and avoids latency in execution due to frequent creation and destruction of threads for short-lived tasks 
+By maintaining a pool of threads, the model increases performance and avoids latency in execution due to frequent creation and destruction of threads for short-lived tasks. 
+The number of available threads is tuned to the computing resources available to the program, such as parallel processors, cores, memory, and network sockets. 
+A common method of scheduling tasks for thread execution is a synchronized queue, known as a task queue. The threads in the pool remove waiting tasks from the queue, and place them into a completed task queue after completion of execution.
+
+
+![](https://images2018.cnblogs.com/blog/827956/201804/827956-20180402214956670-1632462809.png)]]></description></item><item><title>[Computer Networking]</title><link>http://www.cnblogs.com/HuisClos/archive/2018/02/10/8438952.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Sat, 10 Feb 2018 07:44:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/02/10/8438952.html</guid><description><![CDATA[<p>三次握手</p>]]></description></item><item><title>[Compilers]——A Simple Syntax-Directed Translator</title><link>http://www.cnblogs.com/HuisClos/archive/2018/02/10/8438948.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Sat, 10 Feb 2018 07:43:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2018/02/10/8438948.html</guid><description><![CDATA[<p>develops a&nbsp; miniature compiler and introduces many of the important concepts,which are then developed in later chapters.The compiler itself appears in the appendix.</p>]]></description></item><item><title>微积分——外微分形式的微积分</title><link>http://www.cnblogs.com/HuisClos/archive/2017/06/09/6966036.html</link><dc:creator>HuisClos</dc:creator><author>HuisClos</author><pubDate>Fri, 09 Jun 2017 09:51:00 GMT</pubDate><guid>http://www.cnblogs.com/HuisClos/archive/2017/06/09/6966036.html</guid><description><![CDATA[<p><span style="font-size: 15px;">注释：</span></p>
+<p><span style="font-size: 15px;">转载请注明出处<a id="Editor_Edit_hlEntryLink" title="view: 微积分复习&mdash;&mdash;外微分形式的微积分" href="http://www.cnblogs.com/HuisClos/articles/6966036.html" target="_blank">http://www.cnblogs.com/HuisClos/articles/6966036.html</a>&nbsp;</span></p>
+<hr />
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">在我们所讨论的三度空间（三维）中，能够出现的微分形式只有四种：</span></p>
+<p><span style="font-size: 18px;">零次微分形式&mdash;&mdash;函数 f</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">一次微分形式&mdash;&mdash;线积分<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170608233524309-745506843.png" alt="" />中出现的微分dx,dy,dz的一次式</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170608233805137-581024588.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">二次微分形式&mdash;&mdash;面积分<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170608233934012-1150586147.png" alt="" />中出现的微分dx,dy,dz的二次式 &nbsp;</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170608234259340-471942293.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">三次微分形式&mdash;&mdash;体积分<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170608234438793-2049700963.png" alt="" />中出现的微分dx,dy,dz的三次式</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170608234521215-245361866.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">注意：以上微分形式中至少有两个相同的dx,dy,dz项，每一个形式中只包含具有不同的dx,dy,dz的项。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">我们还知道<strong>联系</strong>这些线、面、体积分的三个基本公式：</span></p>
+<p><span style="font-size: 18px;">Green公式：</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170608235116340-499561022.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 16px;"><span style="font-size: 18px;">其中D为L围成的闭区域，P、Q为D上的具有一阶连续偏微商的函数。</span>&nbsp;</span></p>
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+<p><span style="font-size: 18px;">Gauss公式：</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609001423465-1342074431.png" alt="" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 18px;">&nbsp;其中V为封闭曲面&sum;围成的闭区域，函数P、Q、R为V上有一阶连续偏微商的函数。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">Stokes公式：</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609001648215-1158718168.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size: 18px;">其中封闭曲线L为曲面&sum;的边界，P、Q、R为V上有一阶连续偏微商的函数。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">那么上述三个公式<strong>之间</strong>有什么<strong>联系</strong>？</span></p>
+<p><span style="font-size: 18px;">这就是本文所要关注的。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">我们也很容易联想到上述三个公式的更一般形式的<strong>物理意义</strong>，即<strong>场论</strong>中的三个<strong>度</strong>&mdash;&mdash;梯度、旋度、散度</span></p>
+<p><span style="font-size: 18.6667px;">设 u 为数量场，v = Pi + Qj + Rk 为矢量场。</span></p>
+<p><span style="font-size: 18.6667px;">梯度：</span></p>
+<p><span style="font-size: 18.6667px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609003705747-219347127.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;<span style="font-size: 18px;">旋度：</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609003742247-843859739.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">散度：</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609003900184-1710243457.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">这些度都是怎样产生的？有何数学意义？</span></p>
+<p><span style="font-size: 18px;">这也是本文所要关注的。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">单变量微积分有Newton-Leibniz公式，即微分与积分是一对对立统一的运算</span></p>
+<p><span style="font-size: 18px;">多变量微积分中微分、积分的对立统一是怎样体现的？</span></p>
+<p><span style="font-size: 18px;">这又是本文所要关注的。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">怀着这三种疑惑，我们开始观察这些积分。</span></p>
+<p><span style="font-size: 18px;">容易发现，</span></p>
+<p><span style="font-size: 18px;">第二型线、面积分的积分区域都是有方向的。</span></p>
+<p><span style="font-size: 18px;">然后容易想到可以把一重积分、二重积分看作第二型线、面积分的特例：积分区域也有方向。</span></p>
+<p><span style="font-size: 18px;">三重积分同理也可定向。</span></p>
+<p><span style="font-size: 18px;">所以，曲线长度因方向不同被定义成正负，亦如单变量微积分中<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609123759653-1813197712.png" alt="" />的这个性质。</span></p>
+<p><span style="font-size: 18px;">&nbsp;</span></p>
+<p><span style="font-size: 18px;">关于曲面，</span></p>
+<p><span style="font-size: 18px;">定向是分为内外侧（看课本定义，即法线从起点连续移动直到回到起点，根据法线方向是否改变来为曲面定向）</span></p>
+<p><span style="font-size: 18px;">（不可定向的曲面典型就是著名的莫比乌斯带。）</span></p>
+<p><span style="font-size: 18px;">来张图吧</span></p>
+<p><span style="font-size: 18px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609124634950-743481828.png" alt="" />莫比乌斯带&mdash;&mdash;不可定向</span></p>
+<p><span style="font-size: 18px;">&nbsp;</span></p>
+<p><span style="font-size: 18px;">那么我们在这里只能讨论可定向的曲面咯。</span></p>
+<p><span style="font-size: 18px;">所以，曲面面积在面积元素定向后因方向不同被被定义成正负。</span></p>
+<p><span style="font-size: 18px;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">根据二重积分定义，再将面积元素进行变元变换（看课本定义，不详细写）<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609125200278-708655766.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">当时是为了保持面积元素始终为正，而对式中Jacobi行列式取了绝对值。</span></p>
+<p><span style="font-size: 18px;">但是现在，面积元素被允许有正负了，就没必要取绝对值了，就变成了这样</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609125720012-75663469.png" alt="" /></p>
+<p><span style="font-size: 18px;">其中D已定向，D<sup>&rsquo;</sup>是D经过变元逆变换得到的区域，自然是定向了的。</span></p>
+<p><span style="font-size: 18px;">所以，</span></p>
+<p><span style="font-size: 18px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609130148481-1132722556.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">观察此式的性质&nbsp;</span></p>
+<p><span style="font-size: 18px;">（i）如果取y = x,则有</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609130351872-1709496227.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">（ii）如果将y，x互换，则有</span></p>
+<p>&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609130414903-1936752619.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609130430090-1165337653.png" alt="" /></p>
+<p><span style="font-size: 18px;">此时，dydx&ne;dxdy,即dx,dy在乘积中次序<strong>不能颠倒</strong>，否则就是<strong>正负</strong>的差别。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">满足上述两条的微分乘积被称为微分的外乘积，记为</span>&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609131235043-1814553006.png" alt="" /></p>
+<p><span style="font-size: 18px;">即<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609143116028-1780792405.png" alt="" />&nbsp;和 &nbsp;</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609143147309-818818836.png" alt="" />&nbsp; &nbsp; <span style="font-size: 18px;">第二条和普通的微分乘积不同。</span></p>
+<p><span style="font-size: 18px;">外微分形式：<br /></span></p>
+<p><span style="font-size: 18px;">由微分的外乘积乘函数组成的微分形式：</span></p>
+<p><span style="font-size: 18px;">若P、Q、R、A、B、C、H为x,y,z的函数，</span></p>
+<p><span style="font-size: 18px;">一次外微分形式：<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609144627497-727379287.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">二次外微分形式：<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609144807340-184132411.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">三次外微分形式：<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609144832637-291908520.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">接下来易证得三个外微分形式&lambda;，&micro;，&nu;的外乘积满足分配律、结合律，但不满足交换律。（证明比较简单但编辑起来略繁就不贴了）：</span></p>
+<p><span style="font-size: 18px;">如果&lambda;，&micro;，&nu;是任意三个外微分形式</span></p>
+<p><span style="font-size: 18px;">分配律：</span></p>
+<p><span style="font-size: 18px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609145307965-629193352.png" alt="" /></span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609145432184-1716588760.png" alt="" /></p>
+<p><span style="font-size: 18px;">交换律：</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609145520543-291465641.png" alt="" /></p>
+<p><span style="font-size: 18px;">不满足结合律：</span></p>
+<p><span style="font-size: 18px;">若&micro;为p次外微分形式，&lambda;为q次外微分形式</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609145610231-1921080778.png" alt="" /></p>
+<p><span style="font-size: 18px;">这些定律用于后期推广证明。</span></p>
+<p><span style="font-size: 18px;">容易联想到</span></p>
+<p><span style="font-size: 18px;">外微分可<strong>类比</strong>为：<strong>矢量外乘积</strong></span></p>
+<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">为了便于推广，我们可根据形式定义算子。</span></p>
+<p><span style="font-size: 18px;">因此我们根据外微分形式&omega;定义外微分算子d,</span></p>
+<p><span style="font-size: 18px;">零次外微分形式 &nbsp; &nbsp;函数 f 定义为</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150333528-1225988723.png" alt="" />，其实这里就是普通的全微分算子</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">一次外微分形式 &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150438528-244303335.png" alt="" />，定义为</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150505637-1490591130.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 18px;"> 由于</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150633215-1105863953.png" alt="" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150710309-1209007559.png" alt="" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150724856-812688243.png" alt="" /></p>
+<p>&nbsp; &nbsp; &nbsp; <span style="font-size: 18px;">所以</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150756325-190079679.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150811184-879472649.png" alt="" /></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150905543-491957426.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150920793-1687314073.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609150933559-1718995329.png" alt="" /></p>
+<p><span style="font-size: 18px;">由于</span></p>
+<p>&nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151000559-1360350263.png" alt="" /></p>
+<p>&nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151051793-1863147077.png" alt="" />&nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151105153-103890120.png" alt="" />&nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151033403-362453752.png" alt="" /></p>
+<p><span style="font-size: 18px;">&nbsp;所以</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151229137-1458004266.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151243606-977427840.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">二次外微分形式&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151346465-1795833404.png" alt="" />，定义为</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151419043-1792086252.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">同理易得</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151458700-1948046302.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">三次外微分形式&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151537887-1311419210.png" alt="" />，定义为</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151603153-964555439.png" alt="" /></p>
+<p><span style="font-size: 18px;">同理，由于</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151625668-1067223842.png" alt="" /></p>
+<p><span style="font-size: 18px;">所以</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151658997-626129393.png" alt="" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151745497-844499942.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609151800747-641160097.png" alt="" /></p>
+<p><span style="font-size: 18px;">为什么等于零？因为每一项中至少有两个微分是相同的</span></p>
+<p><span style="font-size: 18px;">所以，在三维空间中任意的三次外微分形式的外微分是<strong>零</strong></span></p>
+<p><span style="font-size: 18px;">外微分算子和普通微分算子运算方式相同，唯一的不同就是外微分算子运算后进行外乘积，而普通微分算子运算后进行正常的乘积。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">于是我们得到了零次、一次、二次、三次外微分算子。</span></p>
+<p><span style="font-size: 18px;">接下来，</span></p>
+<p><span style="font-size: 18px;">设零次外微分形式&omega;=f,</span></p>
+<p><span style="font-size: 18px;">就有</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609153838840-1167426601.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">然后</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609153859872-1274774274.png" alt="" /></span></p>
+<p><span style="font-size: 18px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154001325-813077423.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154012840-1096250220.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154024950-647579164.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">由于</span></p>
+<p><span style="font-size: 18px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154114247-842271509.png" alt="" /></span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154128356-829812756.png" alt="" />&nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154141028-1884088645.png" alt="" />&nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154152200-495729851.png" alt="" /></p>
+<p><span style="font-size: 18px;">所以</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154211372-2108201682.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154225356-918632084.png" alt="" /></p>
+<p><span style="font-size: 18px;">假设f具有二阶连续偏微商，则有</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154326122-1997204859.png" alt="" />&nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154344465-75906613.png" alt="" />&nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154355231-66872874.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">所以</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154425325-706238715.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">一次外微分形式</span> &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154622497-1160709863.png" alt="" /></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154747137-1561353765.png" alt="" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154800872-297711830.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154813184-2016210473.png" alt="" /></p>
+<p><span style="font-size: 18px;">于是</span></p>
+<p>&nbsp;</p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154829981-1534350169.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154915653-1200453566.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;<span style="font-size: 18px;">二次外微分形式</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154644872-1128210396.png" alt="" /></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154957934-1768110303.png" alt="" /></p>
+<p><span style="font-size: 18px;">易得</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609155032215-1306305752.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">三次外微分形式</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609154718356-1570658191.png" alt="" /></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609155102450-416489411.png" alt="" /></p>
+<p><span style="font-size: 18px;">易得</span> &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609155122403-949487136.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">这就是<strong>Poincar&eacute;引理：</strong></span></p>
+<p><span style="font-size: 14pt;"><strong>若&omega;为一个外微分形式，其微分形式的系数具有二阶连续偏微商，则<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609155328012-50268371.png" alt="" />。</strong></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">那么Poincar&eacute;引理的逆定理是否成立呢？成立。</span></p>
+<p><span style="font-size: 18px;">先阐述<strong>Poincar&eacute;引理之逆：</strong></span></p>
+<p><span style="font-size: 18px;"><strong>若&omega;是一个p次外微分式且<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609155550512-949962630.png" alt="" />，则存在一个p-1次外微分形式 a，使<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609155649215-87327277.png" alt="" />。</strong></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">其实我们学习场论中的有势场、管型场时已经证明过了。</span></p>
+<p><span style="font-size: 18px;">这里具体不贴了。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">引入外微分后，接下来回到之前的疑惑之一&mdash;&mdash;场论中的三个度究竟是什么含义，还有没更多的度？</span></p>
+<p><span style="font-size: 18px;">先将三个度化成外微分形式，观察其意义。</span></p>
+<p><span style="font-size: 18px;">&nbsp;</span></p>
+<p><span style="font-size: 18px;">零次外微分形式&nbsp;&omega; = f, 零次外微分形式的外微分</span></p>
+<p>&nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609160810872-578530550.png" alt="" /></p>
+<p><span style="font-size: 18px;">又 f 的梯度为</span></p>
+<p><span style="font-size: 18px;">&nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609160906340-1569849397.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">所以<strong>梯度</strong>与<strong>零次外微分形式的外微分</strong>相对应。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">一次外微分形式<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161024309-1189437097.png" alt="" />的外微分</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161047731-1508785377.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161058575-77532228.png" alt="" /></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161115278-1275546487.png" alt="" /></p>
+<p><span style="font-size: 18px;">又矢量</span>&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161224872-479415492.png" alt="" /><span style="font-size: 18px;">的旋度为</span></p>
+<p>&nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161244231-1167097289.png" alt="" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161310559-1058583051.png" alt="" /></p>
+<p><span style="font-size: 18px;">所以<strong>旋度</strong>与<strong>一次外微分形式的外微分</strong>相对应。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">二次外微分形式<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161501293-1294607927.png" alt="" />的外微分</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161529965-992287344.png" alt="" /></span></p>
+<p>&nbsp;<span style="font-size: 18px;">又矢量</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161548762-154397742.png" alt="" /><span style="font-size: 18px;">的散度</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609161625184-563509773.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">所以<strong>散度</strong>与<strong>二次外微分形式的外微分</strong>相对应。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">三次外微分形式的外微分在三维空间中为零。</span></p>
+<p><span style="font-size: 18px;">所以没有相对应的度。</span></p>
+<p><span style="font-size: 18px;">三维空间里，也没有更多的度了。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">综上，就是如下</span></p>
+<p><span style="font-size: 18px;">外微分形式的次数 &nbsp; &nbsp; &nbsp; 度</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;梯度</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;旋度</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;散度</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">那么，Poincar&eacute;引理与Poincar&eacute;引理之逆也有其场论意义了：</span></p>
+<p><span style="font-size: 18px;">易得</span></p>
+<p><span style="font-size: 18px;">Poincar&eacute;引理中</span></p>
+<p><span style="font-size: 18px;">当&omega;为零次外微分形式&omega; = f,有<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609162520512-548025397.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">即&nbsp;</span><img style="font-size: 18px;" src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609162337200-1712960643.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">当&omega;为一次外微分形式<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609162652012-1022005238.png" alt="" />，记<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609164451168-434642312.png" alt="" />，有&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609164505809-946929377.png" alt="" /></span></p>
+<p>&nbsp;<span style="font-size: 18px;">即</span>&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609164546872-1104522972.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">Poincar&eacute;引理之逆中</span></p>
+<p><span style="font-size: 18px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170237231-541187947.png" alt="" />等价于<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170315668-344909378.png" alt="" /></span></p>
+<p><span style="font-size: 18px;"><span style="font-size: 18px;">即</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170551028-1320435782.png" alt="" /><span style="font-size: 18px;">必有</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170620293-651547904.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;"><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170807481-1019536740.png" alt="" />等价于<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170848450-1406503996.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170903918-960247185.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">即<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170551028-1320435782.png" alt="" />必有<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609170620293-651547904.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<hr />
+<p><span style="font-size: 18px;">回到剩下两个疑惑&mdash;&mdash;三个公式与高维空间中微分积分的关系</span></p>
+<p><span style="font-size: 18px;">现将三个公式写成外微分形式。</span></p>
+<p><span style="font-size: 18px;">Green公式</span></p>
+<p><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171243606-2052361372.png" alt="" /></p>
+<p><span style="font-size: 18px;">记</span><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171414450-927097820.png" alt="" /><span style="font-size: 18px;">，为一次外微分形式，于是</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; <img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171459293-2144170767.png" alt="" /></p>
+<p><span style="font-size: 18px;">又线积分L可定向，所以该公式可写成</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171647309-910557394.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">同理，Gauss公式</span></p>
+<p>&nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171727090-1464327475.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171745215-312103508.png" alt="" /></p>
+<p><span style="font-size: 18px;">又&Sigma;定向，所以记<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171917700-458329938.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609171932059-2050804157.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">该公式可写成</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172001872-1501594653.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">同理Stokes公式</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172054731-1684817749.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172108950-857986364.png" alt="" /></p>
+<p><span style="font-size: 18px;">又线、面积分都为定向，将<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172207012-1576253386.png" alt="" />看作一次外微分形式</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172247434-735417602.png" alt="" /><img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172258387-451707029.png" alt="" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">所以该公式可写成</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172322778-113865849.png" alt="" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">综上，可以看出，<strong>Green公式、Gauss公式、Stokes公式实际上是一个公式</strong></span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172705106-1362753748.png" alt="" /></p>
+<p><span style="font-size: 18px;">其中&omega;为外微分形式，d&omega;为&omega;的外微分，&Sigma;为d&omega;的封闭积分区域，&part;&Sigma;为&Sigma;的边界，&int;为区域有多少维数即多少重数。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">含义：</span></p>
+<p><strong><span style="font-size: 18px;">高次的外微分形式d&omega;在区域上的积分等于低一次的外微分形式&omega;在区域的低一维空间边界上的积分。</span></strong></p>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: 18px;">外微分运算和积分是相互抵消的，亦如一维空间中Newton-Leibniz公式。</span></strong></p>
+<p><span style="font-size: 18px;">由于三维空间中三次外微分形式的外微分为零，所以有了这个公式以后，区分区域和边界的公式就不再有了。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">这个公式就是广义的Stokes公式</span></p>
+<p><span style="font-size: 18px;">再写一遍</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="http://images2015.cnblogs.com/blog/827956/201706/827956-20170609172705106-1362753748.png" alt="" /></span></p>
+<p><span style="font-size: 18px;">这个公式还可以推广到更一般的流形上（这个未来再说）</span></p>
+<p><span style="font-size: 18px;">综上，在三维空间中，</span></p>
+<p><span style="font-size: 18px;">外微分形式的次数 &nbsp; &nbsp; &nbsp;空间 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 公式</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;直线段 &nbsp; &nbsp; &nbsp; &nbsp; Newton-Leibniz公式</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;平面区域 &nbsp; &nbsp; &nbsp;Green公式</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;空间曲面 &nbsp; &nbsp; &nbsp;Stokes公式</span></p>
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;空间中区域 &nbsp; Gauss公式</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+<p><span style="font-size: 18px;">完</span></p>
+<p><span style="font-size: 18px;">&nbsp;</span></p>]]></description></item></channel></rss>
