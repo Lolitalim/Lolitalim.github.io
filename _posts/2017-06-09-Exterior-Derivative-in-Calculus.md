@@ -8,7 +8,7 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 在我们所讨论的三度空间（三维）中，能够出现的微分形式只有四种：
 
-零次微分形式——函数 f
+零次微分形式——函数 <body>$f$/></body>
 
 
 
