@@ -18,7 +18,7 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 
 
-二次微分形式——面积分![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.003.png)中出现的微分dx,dy,dz的二次式  
+二次微分形式——面积分![](/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.003.png)中出现的微分dx,dy,dz的二次式  
 
 `                                         `![](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.004.png)
 
