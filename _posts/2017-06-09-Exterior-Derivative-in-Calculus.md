@@ -4,6 +4,9 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 <http://www.cnblogs.com/HuisClos/articles/6966036.html> 
 
+
+Now I start writing blogs on github pages, so I move it over here.
+
 -----
 
 
@@ -13,8 +16,8 @@ I wrote this paragraph in my sophomore year on another blog platform.
 
 
 一次微分形式——线积分 ![001](/docs/assets/img/ExteriorDerivativeInCalculus/001.png) 中出现的微分dx,dy,dz的一次式
-                                         ![002](/docs/assets/img/ExteriorDerivativeInCalculus/002.png)
-                                      
+
+                                       ![002](/docs/assets/img/ExteriorDerivativeInCalculus/002.png)
 
 
 
