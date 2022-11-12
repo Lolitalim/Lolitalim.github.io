@@ -40,7 +40,3 @@ defaults:
       type: post
     values:
       tags: Diary
-      path: ""
-      type: post
-    values:
-      tags: Mathematics
