@@ -11,7 +11,7 @@
 
 
 
-一次微分形式——线积分![](Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.001.png)中出现的微分dx,dy,dz的一次式
+一次微分形式——线积分![](/_posts/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.001.png)中出现的微分dx,dy,dz的一次式
 
 `                                             `![](Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.002.png)
 
