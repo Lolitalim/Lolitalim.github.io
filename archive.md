@@ -1,6 +1,10 @@
 ---
 layout: page
+title: Resume
+layout: page
 title: Blog Archive
+layout: page
+title: Bookmarks
 ---
 
 {% for tag in site.tags %}
