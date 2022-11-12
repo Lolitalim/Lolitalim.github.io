@@ -39,4 +39,9 @@ defaults:
       path: ""
       type: post
     values:
-      tags: Other
+      tags: Diary
+   - scope:
+      path: ""
+      type: post
+    values:
+      tags: Mathematics
