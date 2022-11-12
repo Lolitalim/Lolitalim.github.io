@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<link href="/css/override.css" rel="stylesheet" type="text/css">
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -16,24 +17,14 @@ layout: default
       {%- endif -%}</p>
   </header>
 
-  <div class="share-links no-print">
+  <div class="share-links">
     {% include sharelinks.html %}
   </div>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
-    <div class="no-print">
-      {% include navlinks.html %}
-    </div>
+    {% include navlinks.html %}
   </div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
-
-{% if site.comments_repo %}
-  {% include comments.html %}
-{% endif %}
-
-<script type="text/javascript" src="/js/gifffer.min.js"></script>
-<script>window.onload = function() { Gifffer(); }</script>
-<script type="text/javascript" src="/js/copy-code-button.js"></script>
