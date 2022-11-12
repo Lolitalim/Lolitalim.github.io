@@ -1,15 +1,8 @@
 ---
 layout: post
 title: "First Post"
-description: "Very first post with tags"
 date: 2022-11-12
 tags: Diary
-
----
-
-
-
-## First Post
 
 ---
 

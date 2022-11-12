@@ -1,4 +1,12 @@
-﻿Remarks:
+﻿---
+layout: post
+title: "Exterior Derivative in Calculus"
+date: 2017-06-09
+tags: Mathematics
+
+---
+
+Remarks:
 
 I wrote this paragraph in my sophomore year on another blog platform.
 
