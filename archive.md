@@ -11,4 +11,11 @@ title: Blog Archive
       <li><a href="{{ post.url }}">{{ post.date | date: "%B %Y" }} - {{ post.title }}</a></li>
     {% endfor %}
   </ul>
+  
+  <h3>{{ tag[1] }}</h3>
+  <u1>
+    {% for post in tag[2] %}
+       <li><a href="{{ post.url }}">{{ post.date | date: "%B %Y" }} - {{ post.title }}</a></li>
+    {% endfor %}
+  </u1>
 {% endfor %}
