@@ -11,9 +11,7 @@ I wrote this paragraph in my sophomore year on another blog platform.
 零次微分形式——函数 f
 
 
-
-
-一次微分形式——线积分<body><img src="/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/001.png" alt="test" style="width:128px;height:128px;" /></body>中出现的微分dx,dy,dz的一次式
+一次微分形式——线积分 <body><img src="/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/001.png" alt="test" style="width:128px;height:128px;"/></body>中出现的微分dx,dy,dz的一次式
 
 `                                             `![caculus](/Lolitalim.github.io/docs/assets/img/ExteriorDerivativeInCalculus/Aspose.Words.cc1b627d-3306-4232-b296-97c8494b42bf.002.png)
 
