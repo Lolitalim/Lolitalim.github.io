@@ -55,18 +55,6 @@ This gives us the recurrence $$f(2j+1)=2f(j)+1$$;.
 
 When we tabulate the values of $$ n $$ and $$ f(n) $$ we see a pattern:
 
-\documentclass{article}
-
-\begin{document}
-
-\begin{tabular}{ccccccccccccccccc}%
-$$n$$&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
-$$f(n)$$&1&1&3&1&3&5&7&1&3&5&7&9&11&13&15&1\\
-\end{tabular}
-
-\end{document}
-
-
 $$n$$	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16
 
 $$f(n)$$	1	1	3	1	3	5	7	1	3	5	7	9	11	13	15	1
@@ -89,7 +77,7 @@ The base case $$ n=1 $$ is true.
 
 We consider separately the cases when $$ n $$ is $$ even $$ and when $$ n $$ is $$ odd $$.
 
-If $$ n $$ is $$ even $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ n/2=2^{{m_{1}}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=l/2 $$.
+If $$ n $$ is $$ even $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ n/2=2^{m_{1}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=l/2 $$.
 
 We have $$ f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1 $$, where the second equality follows from the induction hypothesis.
 
@@ -151,11 +139,9 @@ Let $$ f(n,k) $$ denote the position of the survivor. After the $$ k $$ th perso
 
 The position of the survivor in the remaining circle would be $$ f(n-1,k) $$ if we start counting at $$ 1 $$;
 
-shifting this to account for the fact that we're starting at $$(k{\bmod n})+1 $$ yields the recurrence
+shifting this to account for the fact that we're starting at $$(k{\bmod n})+1 $$ yields the recurrence $$ f(n,k)=((f(n-1,k)+k-1){\bmod n)+1,{\with}f(1,k)=1 $$,
 
-$$ f(n,k)=((f(n-1,k)+k-1){\bmod n})+1,{\{ with }}f(1,k)=1 $$,
-
-which takes the simpler form $$g(n,k)=(g(n-1,k)+k){\bmod n},{\{ with }}g(1,k)=0 $$
+which takes the simpler form $$g(n,k)=(g(n-1,k)+k){\bmod n},{\with}g(1,k)=0 $$
 
 if we number the positions from $$ 0 $$ to $$ n-1 $$ instead.
 
@@ -169,6 +155,6 @@ This improved approach takes the form
 
 $$
 \begin{aligned} 
-{\displaystyle g(n,k)={\begin{cases}0&{\{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&{\{if }}1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\{if }}k\leq n\\\end{cases}}}
+{\displaystyle g(n,k)={\begin{cases}0&{\if}n=1\\(g(n-1,k)+k){\bmod n}&{\if }1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\if }k\leq n\\\end{cases}}}
 \end{aligned}
 $$
