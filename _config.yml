@@ -53,10 +53,6 @@ home_post_limit: 5
 defaults:
   - scope:
       path: ""
-    values:
-      image: /docs/assets/img/me/me.jpeg # Apply default site image
-  - scope:
-      path: ""
       type: posts
     values:
       tags:

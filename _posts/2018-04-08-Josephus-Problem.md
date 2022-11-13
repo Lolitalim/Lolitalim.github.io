@@ -20,36 +20,36 @@ Surprisingly, I've read so many things in undergraduate years, but keep on nothi
 
 
 
-$n$ people (numbered text $$ 1 $$ text to text $$ n $$ text) around a circle, eliminate every second remaining person until only one survives.
+$n$ people (numbered  $$ 1 $$  to  $$ n $$ ) around a circle, eliminate every second remaining person until only one survives.
 
 The problem — given the number of people, starting point, direction, and number to be skipped — is to choose the position in the initial circle to avoid execution.
 
 Solution:
 
-In the following, text $$ n $$ text denotes the number of people in the initial circle, and text $$ k $$ text denotes the count for each step, that is, text $$ k-1 $$ text people are skipped and the text $$ k $$ text th is executed.
+In the following,  $$ n $$  denotes the number of people in the initial circle, and  $$ k $$  denotes the count for each step, that is,  $$ k-1 $$  people are skipped and the  $$ k $$  th is executed.
 
-The people in the circle are numbered from text $$ 1 $$ text to text $$ n $$ text.
+The people in the circle are numbered from  $$ 1 $$  to  $$ n $$ .
 
-We explicitly solve the problem when every second person will be killed, i.e. text $$ k=2 $$ text. (For the more general case text $$ k=2 $$ text, we outline a solution below.) We express the solution recursively.
+We explicitly solve the problem when every second person will be killed, i.e.  $$ k=2 $$ . (For the more general case  $$ k=2 $$ , we outline a solution below.) We express the solution recursively.
 
-Let text $$ f(n) $$ text denote the position of the survivor when there are initially text $$ n $$ text people (and text $$ k=2 $$ text).
+Let  $$ f(n) $$  denote the position of the survivor when there are initially  $$ n $$  people (and  $$ k=2 $$ ).
 
-The first time around the circle, all of the text$$ even $$ text -numbered people die.
+The first time around the circle, all of the $$ even $$  -numbered people die.
 
-The second time around the circle, the new text $$ 2 $$ text nd person dies, then the new text $$ 4 $$ text th person, etc.;
+The second time around the circle, the new  $$ 2 $$  nd person dies, then the new  $$ 4 $$  th person, etc.;
 
 it's as though there were no first time around the circle.
 
  
-If the initial number of people was text $$ even $$ text, then the person in position text $$ x $$ text during the second time around the circle was originally in position tetx $$ 2x-1 $$ text (for every choice of text $$ x $$ text).
+If the initial number of people was  $$ even $$ , then the person in position  $$ x $$  during the second time around the circle was originally in position tetx $$ 2x-1 $$  (for every choice of  $$ x $$ ).
 
-Let tetx $$ n=2j $$ text. The person at text $$ f(j) $$ text who will now survive was originally in position text $$ 2f(j)-1 $$ text.
+Let tetx $$ n=2j $$ . The person at  $$ f(j) $$  who will now survive was originally in position  $$ 2f(j)-1 $$ .
 
-This gives us the recurrence text $$ f(2j)=2f(j)-1 $$ text;.
+This gives us the recurrence  $$ f(2j)=2f(j)-1 $$ ;.
 
-If the initial number of people was text $$ odd $$ text, then we think of person text $$ 1 $$ text as dying at the end of the first time around the circle.
+If the initial number of people was  $$ odd $$ , then we think of person  $$ 1 $$  as dying at the end of the first time around the circle.
 
-Again, during the second time around the circle, the new text $$ 2 $$ text nd person dies, then the new text $$ 4 $$ text th person, etc. In this case, the person in position \$$ x $$ was originally in position \$$ 2x+1 $$.
+Again, during the second time around the circle, the new  $$ 2 $$  nd person dies, then the new  $$ 4 $$  th person, etc. In this case, the person in position \$$ x $$ was originally in position \$$ 2x+1 $$.
 
 This gives us the recurrence \$$ f(2j+1)=2f(j)+1 $$;.
 
@@ -121,9 +121,9 @@ The position of the survivor in the remaining circle would be \$$ f(n-1,k) $$ if
 
 shifting this to account for the fact that we're starting at \$$(k{\bmod n})+1 $$ yields the recurrence
 
-\$$ f(n,k)=((f(n-1,k)+k-1){\bmod n})+1,{\text{ with }}f(1,k)=1 $$,
+\$$ f(n,k)=((f(n-1,k)+k-1){\bmod n})+1,{\{ with }}f(1,k)=1 $$,
 
-which takes the simpler form \$$g(n,k)=(g(n-1,k)+k){\bmod n},{\text{ with }}g(1,k)=0 $$
+which takes the simpler form \$$g(n,k)=(g(n-1,k)+k){\bmod n},{\{ with }}g(1,k)=0 $$
 
 if we number the positions from \$$ 0 $$ to \$$ n-1 $$ instead.
 
@@ -136,6 +136,6 @@ It is based on considering killing \$$ k $$th, \$$ 2k $$th, ...,\$$ (\lfloor n/k
 This improved approach takes the form
 $$
 \begin{aligned} 
-{\displaystyle g(n,k)={\begin{cases}0&{\text{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&{\text{if }}1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\text{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\text{if }}k\leq n\\\end{cases}}}
+{\displaystyle g(n,k)={\begin{cases}0&{\{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&{\{if }}1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\{if }}k\leq n\\\end{cases}}}
 \end{aligned}
 $$
