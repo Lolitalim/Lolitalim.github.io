@@ -2,7 +2,7 @@
 layout: post
 title: "Exterior Derivative in Calculus"
 date: 2017-06-09
-tags: Mathematics
+tags: Calculus
 
 ---
 
