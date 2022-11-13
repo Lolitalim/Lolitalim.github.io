@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Recurrent Problems]Josephus Problem"
+title: "[Recurrent Problems] Josephus Problem"
 date: 2018-04-08
 tags: Algorithms
 ---
@@ -55,6 +55,18 @@ This gives us the recurrence $$f(2j+1)=2f(j)+1$$;.
 
 When we tabulate the values of $$ n $$ and $$ f(n) $$ we see a pattern:
 
+\documentclass{article}
+
+\begin{document}
+
+\begin{tabular}{ccccccccccccccccc}%
+$$n$$&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
+$$f(n)$$&1&1&3&1&3&5&7&1&3&5&7&9&11&13&15&1\\
+\end{tabular}
+
+\end{document}
+
+
 $$n$$	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16
 
 $$f(n)$$	1	1	3	1	3	5	7	1	3	5	7	9	11	13	15	1
@@ -71,32 +83,32 @@ Theorem: If $$ n=2^{m}+l $$ and $$ 0\leq l<2^{m} $$, then $$ f(n)=2l+1 $$.
 
 Proof:    
 	
-	We use strong induction on $$ n $$.
-	
-	The base case $$ n=1 $$ is true.
-	
-	We consider separately the cases when $$ n $$ is $$ even $$ and when $$ n $$ is $$ odd $$.
-	
-	If $$ n $$ is $$ even $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ n/2=2^{{m_{1}}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=l/2 $$.
-	
-	We have $$ f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1 $$, where the second equality follows from the induction hypothesis.
-	
-	If $$ n $$ is $$ odd $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ (n-1)/2=2^{m_{1}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=(l-1)/2 $$.
-	
-	We have $$ f(n)=2f((n-1)/2)+1=2((2l_{1})+1)+1=2l+1 $$, where the second equality follows from the induction hypothesis.
-	
-	This completes the proof.
-	
-	
-	We can solve for $$l$$ to get an explicit expression for $$ f(n) $$:
-	
-	$$ f(n)=2(n-2^{\left\lfloor \log _{2}(n)\right\rfloor } )+1 $$
-	
-	The most elegant form of the answer involves the binary representation of size $$ n $$: $$ f(n) $$ can be obtained by a one-bit left cyclic shift of $$ n $$ itself.
-	
-	If we represent $$ n $$ in binary as $$ n=1b_{1}b_{2}b_{3}\dots b_{m} $$, then the solution is given by $$ f(n)=b_{1}b_{2}b_{3}\dots b_{m}1 $$.
-	
-	The proof of this follows from the representation of $$ n $$ as $$ 2^{m}+l $$ or from the above expression for $$ f(n) $$.
+We use strong induction on $$ n $$.
+
+The base case $$ n=1 $$ is true.
+
+We consider separately the cases when $$ n $$ is $$ even $$ and when $$ n $$ is $$ odd $$.
+
+If $$ n $$ is $$ even $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ n/2=2^{{m_{1}}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=l/2 $$.
+
+We have $$ f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1 $$, where the second equality follows from the induction hypothesis.
+
+If $$ n $$ is $$ odd $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ (n-1)/2=2^{m_{1}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=(l-1)/2 $$.
+
+We have $$ f(n)=2f((n-1)/2)+1=2((2l_{1})+1)+1=2l+1 $$, where the second equality follows from the induction hypothesis.
+
+This completes the proof.
+
+
+We can solve for $$l$$ to get an explicit expression for $$ f(n) $$:
+
+$$ f(n)=2(n-2^{\left\lfloor \log _{2}(n)\right\rfloor } )+1 $$
+
+The most elegant form of the answer involves the binary representation of size $$ n $$: $$ f(n) $$ can be obtained by a one-bit left cyclic shift of $$ n $$ itself.
+
+If we represent $$ n $$ in binary as $$ n=1b_{1}b_{2}b_{3}\dots b_{m} $$, then the solution is given by $$ f(n)=b_{1}b_{2}b_{3}\dots b_{m}1 $$.
+
+The proof of this follows from the representation of $$ n $$ as $$ 2^{m}+l $$ or from the above expression for $$ f(n) $$.
 
 
 Implementation:
