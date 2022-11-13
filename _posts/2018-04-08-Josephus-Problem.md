@@ -20,13 +20,13 @@ Surprisingly, I've read so many things in undergraduate years, but keep on nothi
 
 
 
-$n$ people (numbered $1$ to $n$) around a circle, eliminate every second remaining person until only one survives.
+$n$ people (numbered \$$1$$ to $$n$$) around a circle, eliminate every second remaining person until only one survives.
 
 The problem — given the number of people, starting point, direction, and number to be skipped — is to choose the position in the initial circle to avoid execution.
 
 Solution:
 
-In the following, $n$ denotes the number of people in the initial circle, and $k$ denotes the count for each step, that is, $k-1$ people are skipped and the $k$th is executed.
+In the following, \$n$ denotes the number of people in the initial circle, and \$k$ denotes the count for each step, that is, $k-1$ people are skipped and the $k$th is executed.
 
 The people in the circle are numbered from $1$ to $n$.
 
