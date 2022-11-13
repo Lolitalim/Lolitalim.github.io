@@ -1,4 +1,4 @@
---
+---
 layout: post
 title: "[Recurrent Problems]Josephus Problem"
 date: 2018-04-08
@@ -19,7 +19,7 @@ Surprisingly, I've read so many things in undergraduate years, but keep on nothi
 ------
 
 
-$n$ people (numbered  $$ 1 $$  to  $$ n $$ ) around a circle, eliminate every second remaining person until only one survives.
+$$n$$ people (numbered  $$ 1 $$  to  $$ n $$ ) around a circle, eliminate every second remaining person until only one survives.
 
 The problem — given the number of people, starting point, direction, and number to be skipped — is to choose the position in the initial circle to avoid execution.
 
@@ -69,23 +69,39 @@ He must be the survivor. So $$ f(n)=2l+1 $$. Below, we give a proof by induction
 
 Theorem: If $$ n=2^{m}+l $$ and $$ 0\leq l<2^{m} $$, then $$ f(n)=2l+1 $$.
 
-Proof:    We use strong induction on $$ n $$.
-		  The base case $$ n=1 $$ is true.
-		  We consider separately the cases when $$ n $$ is $$ even $$ and when $$ n $$ is $$ odd $$.
-		  If $$ n $$ is $$ even $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ n/2=2^{{m_{1}}}+l_{1} $$ and $$ 0\leq l_{1}<2^{{m_{1}}} $$. Note that $$ l_{1}=l/2 $$.
-		  We have $$ f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1 $$, where the second equality follows from the induction hypothesis.
-		  If $$ n $$ is $$ odd $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ (n-1)/2=2^{{m_{1}}}+l_{1} $$ and $$ 0\leq l_{1}<2^{{m_{1}}} $$. Note that $$ l_{1}=(l-1)/2 $$.
-		  We have $$ f(n)=2f((n-1)/2)+1=2((2l_{1})+1)+1=2l+1 $$, where the second equality follows from the induction hypothesis.
-		  This completes the proof.
-		  We can solve for $l$ to get an explicit expression for $$ f(n) $$:
-		  $$ f(n)=2(n-2^{\left\lfloor \log _{2}(n)\right\rfloor } )+1 $$
-		  The most elegant form of the answer involves the binary representation of size $$ n $$: $$ f(n) $$ can be obtained by a one-bit left cyclic shift of $$ n $$ itself.
-		  If we represent $$ n $$ in binary as $$ n=1b_{1}b_{2}b_{3}\dots b_{m} $$, then the solution is given by $$ f(n)=b_{1}b_{2}b_{3}\dots b_{m}1 $$.
-		  The proof of this follows from the representation of $$ n $$ as $$ 2^{m}+l $$ or from the above expression for $$ f(n) $$.
+Proof:    
+	
+	We use strong induction on $$ n $$.
+	
+	The base case $$ n=1 $$ is true.
+	
+	We consider separately the cases when $$ n $$ is $$ even $$ and when $$ n $$ is $$ odd $$.
+	
+	If $$ n $$ is $$ even $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ n/2=2^{{m_{1}}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=l/2 $$.
+	
+	We have $$ f(n)=2f(n/2)-1=2((2l_{1})+1)-1=2l+1 $$, where the second equality follows from the induction hypothesis.
+	
+	If $$ n $$ is $$ odd $$, then choose $$ l_{1} $$ and $$ m_{1} $$ such that $$ (n-1)/2=2^{m_{1}}+l_{1} $$ and $$ 0\leq l_{1}<2^{m_{1}} $$. Note that $$ l_{1}=(l-1)/2 $$.
+	
+	We have $$ f(n)=2f((n-1)/2)+1=2((2l_{1})+1)+1=2l+1 $$, where the second equality follows from the induction hypothesis.
+	
+	This completes the proof.
+	
+	
+	We can solve for $$l$$ to get an explicit expression for $$ f(n) $$:
+	
+	$$ f(n)=2(n-2^{\left\lfloor \log _{2}(n)\right\rfloor } )+1 $$
+	
+	The most elegant form of the answer involves the binary representation of size $$ n $$: $$ f(n) $$ can be obtained by a one-bit left cyclic shift of $$ n $$ itself.
+	
+	If we represent $$ n $$ in binary as $$ n=1b_{1}b_{2}b_{3}\dots b_{m} $$, then the solution is given by $$ f(n)=b_{1}b_{2}b_{3}\dots b_{m}1 $$.
+	
+	The proof of this follows from the representation of $$ n $$ as $$ 2^{m}+l $$ or from the above expression for $$ f(n) $$.
+
 
 Implementation:
 
-If $$ n $ denotes the number of people, the safe position is given by the function $$ f(n)=2l+1 $$ ,where $$ n=2^{m}+l $$ and $$ 0\leq l<2^{m} $$.
+If $$ n $$ denotes the number of people, the safe position is given by the function $$ f(n)=2l+1 $$ ,where $$ n=2^{m}+l $$ and $$ 0\leq l<2^{m} $$.
 
 Now if we represent the number in binary format, the first bit denotes $$ 2^{m} $$ and remaining bits will denote $$ l $$.
 
@@ -114,7 +130,9 @@ $$ l $$ = 0 1 0 0 1
 ```
 
 The general case:
+
 The easiest way to solve this problem in the general case is to use dynamic programming by performing the first step and then using the solution of the remaining problem. 
+
 When the index starts from one, then the person at $$ s $$ shifts from the first person is in position $$ ((s-1){\bmod n})+1 $$, where $$ n $$ is the total number of persons.
 
 Let $$ f(n,k) $$ denote the position of the survivor. After the $$ k $$ th person is killed, we're left with a circle of $$ n-1 $$, and we start the next count with the person whose number in the original problem was $$(k{\bmod n})+1 $$.
@@ -136,6 +154,7 @@ The second approach also uses dynamic programming but has running time $$ O(k\lo
 It is based on considering killing $$ k $$th, $$ 2k $$th, ...,$$ (\lfloor n/k\rfloor k) $$ th people as one step, then changing the numbering.
 
 This improved approach takes the form
+
 $$
 \begin{aligned} 
 {\displaystyle g(n,k)={\begin{cases}0&{\{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&{\{if }}1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\{if }}k\leq n\\\end{cases}}}
