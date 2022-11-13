@@ -10,7 +10,7 @@ Remarks:
 
 I wrote this paragraph in my junior year on another blog platform.
 
-<https://www.cnblogs.com/HuisClos/p/8438960.html> 
+<https://www.cnblogs.com/HuisClos/p/8438960.html> 
 
 I move it over here.
 
@@ -29,9 +29,8 @@ Solution:
 In the following, $n$ denotes the number of people in the initial circle, and $k$ denotes the count for each step, that is, $k-1$ people are skipped and the $k$th is executed.
 
 The people in the circle are numbered from $1$ to $n$.
-$k=2$
 
-We explicitly solve the problem when every second person will be killed, i.e. $k=2$. (For the more general case k\neq 2, we outline a solution below.) We express the solution recursively.
+We explicitly solve the problem when every second person will be killed, i.e. $k=2$. (For the more general case $k=2$, we outline a solution below.) We express the solution recursively.
 
 Let $f(n)$ denote the position of the survivor when there are initially $n$ people (and $k=2$).
 
@@ -62,7 +61,7 @@ This suggests that $f(n)$ is an increasing odd sequence that restarts with $f(n)
 
 Therefore, if we choose m and l so that $n=2^{m}+l$ and $0\leq l<2^{m}$, then $f(n)=2\cdot l+1$.
 
-It is clear that values in the table satisfy this equation. Or we can think that after $l$ people are dead there are only $2^{m}$ people and we go to the $2l+1th$ person.
+It is clear that values in the table satisfy this equation. Or we can think that after $l$ people are dead there are only $2^{m}$ people and we go to the $2l+1$th person.
 
 He must be the survivor. So $f(n)=2l+1$. Below, we give a proof by induction.
 
@@ -116,9 +115,9 @@ The general case:
 The easiest way to solve this problem in the general case is to use dynamic programming by performing the first step and then using the solution of the remaining problem. 
 When the index starts from one, then the person at $s$ shifts from the first person is in position $((s-1){\bmod n})+1$, where $n$ is the total number of persons.
 
-Let $f(n,k)$ denote the position of the survivor. After the $k-th$ person is killed, we're left with a circle of $n-1$, and we start the next count with the person whose number in the original problem was $(k{\bmod n})+1$.
+Let $f(n,k)$ denote the position of the survivor. After the $k$th person is killed, we're left with a circle of $n-1$, and we start the next count with the person whose number in the original problem was $(k{\bmod n})+1$.
 
-The position of the survivor in the remaining circle would $bef(n-1,k)$ if we start counting at $1$;
+The position of the survivor in the remaining circle would be $f(n-1,k)$ if we start counting at $1$;
 
 shifting this to account for the fact that we're starting at $(k{\bmod n})+1$ yields the recurrence
 
@@ -126,14 +125,17 @@ $f(n,k)=((f(n-1,k)+k-1){\bmod n})+1,{\text{ with }}f(1,k)=1$,
 
 which takes the simpler form $g(n,k)=(g(n-1,k)+k){\bmod n},{\text{ with }}g(1,k)=0$
 
-if we number the positions from ${\displaystyle 0} to n-1$ instead.
+if we number the positions from $0$ to $n-1$ instead.
 
 This approach has running time $O(n)$, but for small $k$ and large $n$ there is another approach.
 
 The second approach also uses dynamic programming but has running time $O(k\log n)$.
 
-It is based on considering killing $k-th, 2k-th, ...,(\lfloor n/k\rfloor k)-th$ people as one step, then changing the numbering.
+It is based on considering killing $k$th, $2k$th, ...,$(\lfloor n/k\rfloor k)$th people as one step, then changing the numbering.
 
 This improved approach takes the form
-$$ {\displaystyle g(n,k)={\begin{cases}0&{\text{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&{\text{if }}1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\text{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\text{if }}k\leq n\\\end{cases}}}
+$$
+\begin{aligned} 
+{\displaystyle g(n,k)={\begin{cases}0&{\text{if }}n=1\\(g(n-1,k)+k){\bmod {n}}&{\text{if }}1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\text{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\text{if }}k\leq n\\\end{cases}}}
+\end{aligned}
 $$
