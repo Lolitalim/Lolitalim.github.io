@@ -153,4 +153,6 @@ It is based on considering killing $$ k $$th, $$ 2k $$th, ...,$$ (\lfloor n/k\rf
 
 This improved approach takes the form
 
-![001](/docs/assets/img/001.jpg)
+![001](/docs/assets/img/JosephusProblems/001.jpg)
+
+
