@@ -139,9 +139,9 @@ Let $$ f(n,k) $$ denote the position of the survivor. After the $$ k $$ th perso
 
 The position of the survivor in the remaining circle would be $$ f(n-1,k) $$ if we start counting at $$ 1 $$;
 
-shifting this to account for the fact that we're starting at $$(k{\bmod n})+1 $$ yields the recurrence $$ f(n,k)=((f(n-1,k)+k-1){\bmod n)+1,{\with}f(1,k)=1 $$,
+shifting this to account for the fact that we're starting at $$(k{\bmod n})+1 $$ yields the recurrence $$ f(n,k)=((f(n-1,k)+k-1){\bmod n)+1 $$, with $$ f(1,k)=1 $$,
 
-which takes the simpler form $$g(n,k)=(g(n-1,k)+k){\bmod n},{\with}g(1,k)=0 $$
+which takes the simpler form $$g(n,k)=(g(n-1,k)+k){\bmod n}, with $$ g(1,k)=0 $$
 
 if we number the positions from $$ 0 $$ to $$ n-1 $$ instead.
 
@@ -154,7 +154,5 @@ It is based on considering killing $$ k $$th, $$ 2k $$th, ...,$$ (\lfloor n/k\rf
 This improved approach takes the form
 
 $$
-\begin{aligned} 
-{\displaystyle g(n,k)={\begin{cases}0&{\if}n=1\\(g(n-1,k)+k){\bmod n}&{\if }1<n<k\\\left\lfloor {\frac {k((g(n',k)-n{\bmod {k}}){\bmod {n}}')}{k-1}}\right\rfloor {\{where }}n'=n-\left\lfloor {\frac {n}{k}}\right\rfloor &{\if }k\leq n\\\end{cases}}}
-\end{aligned}
+![001](/docs/assets/img/001.jpg)
 $$
