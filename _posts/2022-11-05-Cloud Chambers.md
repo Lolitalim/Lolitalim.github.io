@@ -14,6 +14,7 @@ So I want to note it in my blog.
 ------
 + What is cloud chamber?
 I think the wiki illustrates it clearly.
+
 [Cloud Chamber](https://en.wikipedia.org/wiki/Cloud_chamber)
 
 
@@ -21,10 +22,12 @@ I think the wiki illustrates it clearly.
 
  ![001](/docs/assets/img/CloudChamber/001.jpg)
  
-
-------
 + What I have seen?
 
-Convert my videos to gifs later
+Compress my video later and publish.
+
++ How about radiographic visualizations
+
+Add later.
 
 
