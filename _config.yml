@@ -47,7 +47,7 @@ google_analytics:
 gravatar_hash: 2136e716a089f4a3794f4007328c7bfb
 code_block_max_height: 500px
 
-home_post_limit: 5
+home_post_limit: 8
 
 
 defaults:
