@@ -2,7 +2,7 @@
 layout: post
 title: "Tennis Psychology"
 date: 2023-01-07
-tags: Tennis
+tags: Sports
 
 ---
 ### Play to your strengths:

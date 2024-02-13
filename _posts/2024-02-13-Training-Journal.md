@@ -3,7 +3,7 @@
 layout: post
 title: "Training journal"
 date: 2024-02-13
-tags: Long-distance-race
+tags: Sports
 
 ---
 
