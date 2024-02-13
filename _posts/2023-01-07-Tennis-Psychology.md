@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tennis Psychology"
+title: "Tennis psychology"
 date: 2023-01-07
 tags: Sports
 
